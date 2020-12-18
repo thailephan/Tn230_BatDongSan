@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TN230_BatDongSan", "TN230_BatDongSan\TN230_BatDongSan.csproj", "{DBE9F61A-9CEC-44B9-AF79-B60E26231ED1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbContextModel", "DbContextModel\DbContextModel.csproj", "{05F61284-73AF-4C49-91E3-E0D3A4A9A892}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DBE9F61A-9CEC-44B9-AF79-B60E26231ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBE9F61A-9CEC-44B9-AF79-B60E26231ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBE9F61A-9CEC-44B9-AF79-B60E26231ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F61284-73AF-4C49-91E3-E0D3A4A9A892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F61284-73AF-4C49-91E3-E0D3A4A9A892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F61284-73AF-4C49-91E3-E0D3A4A9A892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F61284-73AF-4C49-91E3-E0D3A4A9A892}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
