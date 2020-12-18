@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DbContextModel.Framework.QuanHuyen>
+
+@{
+    ViewBag.Title = "Quản lý danh mục quận huyện";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới quận / huyện", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaQuanHuyen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenQuanHuyen)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaQuanHuyen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenQuanHuyen)
+        </td>
+        <td>
+            @Html.ActionLink("Cập nhật", "Edit", new { id=item.MaQuanHuyen }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaQuanHuyen })
+        </td>
+    </tr>
+}
+
+</table>
