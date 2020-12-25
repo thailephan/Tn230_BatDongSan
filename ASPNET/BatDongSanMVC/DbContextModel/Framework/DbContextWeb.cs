@@ -15,12 +15,12 @@ namespace DbContextModel.Framework
         public virtual DbSet<Anh> Anhs { get; set; }
         public virtual DbSet<Huong> Huongs { get; set; }
         public virtual DbSet<KhuDanCu> KhuDanCus { get; set; }
-        public virtual DbSet<LoaiBD> LoaiBDS { get; set; }
+        public virtual DbSet<LoaiBDS> LoaiBDS { get; set; }
         public virtual DbSet<QuanHuyen> QuanHuyens { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<ThongTin> ThongTins { get; set; }
-        public virtual DbSet<ThongTinBD> ThongTinBDS { get; set; }
+        public virtual DbSet<ThongTinBDS> ThongTinBDS { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -39,7 +39,7 @@ namespace DbContextModel.Framework
                 .WithRequired(e => e.KhuDanCu)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<LoaiBD>()
+            modelBuilder.Entity<LoaiBDS>()
                 .HasMany(e => e.ThongTinBDS)
                 .WithRequired(e => e.LoaiBD)
                 .WillCascadeOnDelete(false);
@@ -70,11 +70,11 @@ namespace DbContextModel.Framework
                 .WithRequired(e => e.ThongTin)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ThongTinBD>()
+            modelBuilder.Entity<ThongTinBDS>()
                 .Property(e => e.SDTChuBan)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ThongTinBD>()
+            modelBuilder.Entity<ThongTinBDS>()
                 .Property(e => e.Gia)
                 .HasPrecision(19, 4);
         }

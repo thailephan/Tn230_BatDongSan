@@ -57,12 +57,12 @@
     <Compile Include="Framework\DbContextWeb.cs" />
     <Compile Include="Framework\Huong.cs" />
     <Compile Include="Framework\KhuDanCu.cs" />
-    <Compile Include="Framework\LoaiBD.cs" />
+    <Compile Include="Framework\LoaiBDS.cs" />
     <Compile Include="Framework\QuanHuyen.cs" />
     <Compile Include="Framework\sysdiagram.cs" />
     <Compile Include="Framework\TaiKhoan.cs" />
     <Compile Include="Framework\ThongTin.cs" />
-    <Compile Include="Framework\ThongTinBD.cs" />
+    <Compile Include="Framework\ThongTinBDS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

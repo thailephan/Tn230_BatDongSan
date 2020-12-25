@@ -12,7 +12,7 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public QuanHuyen()
         {
-            ThongTinBDS = new HashSet<ThongTinBD>();
+            ThongTinBDS = new HashSet<ThongTinBDS>();
         }
 
         [Key]
@@ -26,6 +26,6 @@
         public string TenQuanHuyen { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongTinBD> ThongTinBDS { get; set; }
+        public virtual ICollection<ThongTinBDS> ThongTinBDS { get; set; }
     }
 }

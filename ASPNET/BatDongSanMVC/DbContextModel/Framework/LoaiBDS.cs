@@ -7,12 +7,12 @@ namespace DbContextModel.Framework
     using System.Data.Entity.Spatial;
 
     [Table("LoaiBDS")]
-    public partial class LoaiBD
+    public partial class LoaiBDS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LoaiBD()
+        public LoaiBDS()
         {
-            ThongTinBDS = new HashSet<ThongTinBD>();
+            ThongTinBDS = new HashSet<ThongTinBDS>();
         }
 
         [Key]
@@ -23,6 +23,6 @@ namespace DbContextModel.Framework
         public string TenLoai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongTinBD> ThongTinBDS { get; set; }
+        public virtual ICollection<ThongTinBDS> ThongTinBDS { get; set; }
     }
 }

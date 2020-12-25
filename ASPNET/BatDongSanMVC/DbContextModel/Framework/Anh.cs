@@ -12,7 +12,7 @@ namespace DbContextModel.Framework
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Anh()
         {
-            ThongTinBDS = new HashSet<ThongTinBD>();
+            ThongTinBDS = new HashSet<ThongTinBDS>();
         }
 
         [Key]
@@ -23,6 +23,6 @@ namespace DbContextModel.Framework
         public string DuongDan { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongTinBD> ThongTinBDS { get; set; }
+        public virtual ICollection<ThongTinBDS> ThongTinBDS { get; set; }
     }
 }

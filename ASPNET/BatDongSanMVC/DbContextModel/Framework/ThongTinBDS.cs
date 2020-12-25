@@ -7,7 +7,7 @@ namespace DbContextModel.Framework
     using System.Data.Entity.Spatial;
 
     [Table("ThongTinBDS")]
-    public partial class ThongTinBD
+    public partial class ThongTinBDS
     {
         [Key]
         public int MaTin { get; set; }
@@ -50,7 +50,7 @@ namespace DbContextModel.Framework
 
         public virtual KhuDanCu KhuDanCu { get; set; }
 
-        public virtual LoaiBD LoaiBD { get; set; }
+        public virtual LoaiBDS LoaiBD { get; set; }
 
         public virtual QuanHuyen QuanHuyen { get; set; }
 
