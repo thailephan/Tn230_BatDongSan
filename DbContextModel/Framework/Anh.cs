@@ -1,4 +1,4 @@
-﻿namespace DbContextModel.Framework
+namespace DbContextModel.Framework
 {
     using System;
     using System.Collections.Generic;
@@ -9,22 +9,15 @@
     [Table("Anh")]
     public partial class Anh
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Anh()
-        {
-            ThongTinBDS = new HashSet<ThongTinBDS>();
-        }
-
         [Key]
-        [Display(Name = "Mã ảnh")]
         public int MaAnh { get; set; }
 
         [Required]
         [StringLength(300)]
-        [Display(Name = "Đường dẫn")]
         public string DuongDan { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongTinBDS> ThongTinBDS { get; set; }
+        public int? MaTin { get; set; }
+
+        public virtual ThongTinBDS ThongTinBDS { get; set; }
     }
 }

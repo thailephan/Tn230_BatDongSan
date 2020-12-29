@@ -1,4 +1,4 @@
-﻿namespace DbContextModel.Framework
+namespace DbContextModel.Framework
 {
     using System;
     using System.Collections.Generic;
@@ -16,12 +16,10 @@
         }
 
         [Key]
-        [Display(Name = "Mã hướng")]
         public int MaHuong { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Tên hướng")]
         public string TenHuong { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

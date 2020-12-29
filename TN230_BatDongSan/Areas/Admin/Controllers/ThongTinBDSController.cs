@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -18,7 +17,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // GET: Admin/ThongTinBDS
         public ActionResult Index()
         {
-            var thongTinBDS = db.ThongTinBDS.Include(t => t.Anh).Include(t => t.Huong).Include(t => t.KhuDanCu).Include(t => t.LoaiBD).Include(t => t.QuanHuyen).Include(t => t.ThongTin);
+            var thongTinBDS = db.ThongTinBDS.Include(t => t.Huong).Include(t => t.KhuDanCu).Include(t => t.LoaiBD).Include(t => t.QuanHuyen).Include(t => t.ThongTin);
             return View(thongTinBDS.ToList());
         }
 
@@ -40,7 +39,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // GET: Admin/ThongTinBDS/Create
         public ActionResult Create()
         {
-            ViewBag.MaAnh = new SelectList(db.Anhs, "MaAnh", "DuongDan");
             ViewBag.MaHuong = new SelectList(db.Huongs, "MaHuong", "TenHuong");
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu");
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai");
@@ -54,38 +52,15 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create
-            ([Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaAnh,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS,
-            HttpPostedFileBase fileUpload
-            )
+        public ActionResult Create([Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS)
         {
             if (ModelState.IsValid)
             {
-                /*Upload ảnh lên server*/
-                var fileName = Path.GetFileName(fileUpload.FileName);
-                var path = Path.Combine(Server.MapPath("~/Content/Image"), fileName);
-
-                if (System.IO.File.Exists(path))
-                {
-                    ViewBag.ThongBao = "Hình ảnh đã tồn tại";
-                }
-                else
-                {
-                    fileUpload.SaveAs(path);
-                    db.Anhs.Add(new Anh
-                    {
-                        DuongDan = fileUpload.FileName
-                    }) ;
-                }
-                thongTinBDS.MaAnh = db.Anhs.Select(a => a.MaAnh).Max();
-
                 db.ThongTinBDS.Add(thongTinBDS);
                 db.SaveChanges();
-                
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaAnh = new SelectList(db.Anhs, "MaAnh", "DuongDan", thongTinBDS.MaAnh);
             ViewBag.MaHuong = new SelectList(db.Huongs, "MaHuong", "TenHuong", thongTinBDS.MaHuong);
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu", thongTinBDS.MaKhuDanCu);
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai", thongTinBDS.MaLoai);
@@ -106,7 +81,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MaAnh = new SelectList(db.Anhs, "MaAnh", "DuongDan", thongTinBDS.MaAnh);
             ViewBag.MaHuong = new SelectList(db.Huongs, "MaHuong", "TenHuong", thongTinBDS.MaHuong);
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu", thongTinBDS.MaKhuDanCu);
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai", thongTinBDS.MaLoai);
@@ -120,7 +94,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaAnh,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS)
+        public ActionResult Edit([Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS)
         {
             if (ModelState.IsValid)
             {
@@ -128,7 +102,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaAnh = new SelectList(db.Anhs, "MaAnh", "DuongDan", thongTinBDS.MaAnh);
             ViewBag.MaHuong = new SelectList(db.Huongs, "MaHuong", "TenHuong", thongTinBDS.MaHuong);
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu", thongTinBDS.MaKhuDanCu);
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai", thongTinBDS.MaLoai);

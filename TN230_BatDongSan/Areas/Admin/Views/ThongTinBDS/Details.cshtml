@@ -1,23 +1,15 @@
 ﻿@model DbContextModel.Framework.ThongTinBDS
 
 @{
-    ViewBag.Title = "Chi tiết - Thông tin bất động sản";
+    ViewBag.Title = "Details";
 }
 
-<h2>Chi tiết</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>Thông tin bất động sản</h4>
+    <h4>ThongTinBDS</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Anh.DuongDan)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Anh.DuongDan)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Huong.TenHuong)
         </dt>
@@ -118,5 +110,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.MaTin }) |
-    @Html.ActionLink("Xem danh sách", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </p>

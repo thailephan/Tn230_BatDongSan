@@ -1,14 +1,14 @@
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
-using System.Linq;
-
 namespace DbContextModel.Framework
 {
+    using System;
+    using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+
     public partial class DbContextWeb : DbContext
     {
         public DbContextWeb()
-            : base("name=DbContext")
+            : base("name=DbContextWeb")
         {
         }
 
@@ -24,11 +24,6 @@ namespace DbContextModel.Framework
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Anh>()
-                .HasMany(e => e.ThongTinBDS)
-                .WithRequired(e => e.Anh)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Huong>()
                 .HasMany(e => e.ThongTinBDS)
                 .WithRequired(e => e.Huong)

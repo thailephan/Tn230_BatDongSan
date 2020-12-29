@@ -1,13 +1,23 @@
 ﻿@model DbContextModel.Framework.Anh
 
 @{
-    ViewBag.Title = "Chi tiết - Ảnh";
+    ViewBag.Title = "Details";
 }
+
+<h2>Details</h2>
 
 <div>
     <h4>Anh</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTinBD.TieuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThongTinBD.TieuDe)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.DuongDan)
         </dt>
@@ -19,6 +29,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaAnh }) |
-    @Html.ActionLink("Xem danh sách", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaAnh }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

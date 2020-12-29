@@ -182,7 +182,6 @@
     <Compile Include="Areas\Admin\Controllers\ThongTinsController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AnhsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HuongsController.cs" />
     <Compile Include="Controllers\KhuDanCusController.cs" />
@@ -190,7 +189,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\QuanHuyensController.cs" />
     <Compile Include="Controllers\TaiKhoansController.cs" />
-    <Compile Include="Controllers\ThongTinBDSController.cs" />
     <Compile Include="Controllers\ThongTinsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

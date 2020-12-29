@@ -17,7 +17,8 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // GET: Admin/Anhs
         public ActionResult Index()
         {
-            return View(db.Anhs.ToList());
+            var anhs = db.Anhs.Include(a => a.ThongTinBDS);
+            return View(anhs.ToList());
         }
 
         // GET: Admin/Anhs/Details/5
@@ -38,6 +39,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // GET: Admin/Anhs/Create
         public ActionResult Create()
         {
+            ViewBag.MaTin = new SelectList(db.ThongTinBDS, "MaTin", "TieuDe");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaAnh,DuongDan")] Anh anh)
+        public ActionResult Create([Bind(Include = "MaAnh,DuongDan,MaTin")] Anh anh)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.MaTin = new SelectList(db.ThongTinBDS, "MaTin", "TieuDe", anh.MaTin);
             return View(anh);
         }
 
@@ -70,6 +73,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.MaTin = new SelectList(db.ThongTinBDS, "MaTin", "TieuDe", anh.MaTin);
             return View(anh);
         }
 
@@ -78,7 +82,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaAnh,DuongDan")] Anh anh)
+        public ActionResult Edit([Bind(Include = "MaAnh,DuongDan,MaTin")] Anh anh)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.MaTin = new SelectList(db.ThongTinBDS, "MaTin", "TieuDe", anh.MaTin);
             return View(anh);
         }
 
