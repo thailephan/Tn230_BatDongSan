@@ -1,13 +1,11 @@
 ﻿@model IEnumerable<DbContextModel.Framework.Huong>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Danh sách - Hướng";
 }
 
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm hướng mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,9 +21,9 @@
             @Html.DisplayFor(modelItem => item.TenHuong)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaHuong }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaHuong }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaHuong })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaHuong }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaHuong }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaHuong })
         </td>
     </tr>
 }

@@ -4,13 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm ảnh mới", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaAnh)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.DuongDan)
         </th>
@@ -23,9 +24,12 @@
             @Html.DisplayFor(modelItem => item.DuongDan)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaAnh }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaAnh }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaAnh })
+            @Html.DisplayFor(modelItem => item.DuongDan)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaAnh }) |
+            @Html.ActionLink("Xem chi tiết", "Details", new { id=item.MaAnh }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaAnh })
         </td>
     </tr>
 }

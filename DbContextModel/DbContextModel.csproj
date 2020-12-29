@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountModel.cs" />
     <Compile Include="Framework\Anh.cs" />
     <Compile Include="Framework\DbContextWeb.cs" />
     <Compile Include="Framework\Huong.cs" />

@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo mới thông tin", "Create")
 </p>
 <table class="table">
     <tr>
@@ -53,9 +53,9 @@
             @Html.DisplayFor(modelItem => item.GioiTinh)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaUser }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaUser }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaUser })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaUser }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaUser }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaUser })
         </td>
     </tr>
 }

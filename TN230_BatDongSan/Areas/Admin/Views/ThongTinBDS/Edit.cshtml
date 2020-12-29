@@ -1,17 +1,17 @@
 ﻿@model DbContextModel.Framework.ThongTinBDS
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Chỉnh sửa - Thông tin bất động sản";
 }
 
-<h2>Edit</h2>
+<h2>Chỉnh sửa</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ThongTinBDS</h4>
+        <h4>Thông tin bất động sản</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.MaTin)
@@ -129,5 +129,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Xem danh sách", "Index")
 </div>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -53,12 +54,34 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaAnh,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS)
+        public ActionResult Create
+            ([Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaAnh,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS,
+            HttpPostedFileBase fileUpload
+            )
         {
             if (ModelState.IsValid)
             {
+                /*Upload ảnh lên server*/
+                var fileName = Path.GetFileName(fileUpload.FileName);
+                var path = Path.Combine(Server.MapPath("~/Content/Image"), fileName);
+
+                if (System.IO.File.Exists(path))
+                {
+                    ViewBag.ThongBao = "Hình ảnh đã tồn tại";
+                }
+                else
+                {
+                    fileUpload.SaveAs(path);
+                    db.Anhs.Add(new Anh
+                    {
+                        DuongDan = fileUpload.FileName
+                    }) ;
+                }
+                thongTinBDS.MaAnh = db.Anhs.Select(a => a.MaAnh).Max();
+
                 db.ThongTinBDS.Add(thongTinBDS);
                 db.SaveChanges();
+                
                 return RedirectToAction("Index");
             }
 

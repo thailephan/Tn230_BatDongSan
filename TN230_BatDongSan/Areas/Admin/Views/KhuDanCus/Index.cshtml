@@ -4,10 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm khu dân cư mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,9 +21,9 @@
             @Html.DisplayFor(modelItem => item.TenKhuDanCu)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaKhuDanCu }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaKhuDanCu }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaKhuDanCu })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaKhuDanCu }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaKhuDanCu }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaKhuDanCu })
         </td>
     </tr>
 }

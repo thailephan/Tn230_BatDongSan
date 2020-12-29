@@ -1,13 +1,11 @@
 ﻿@model IEnumerable<DbContextModel.Framework.TaiKhoan>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Danh sách tài khoản";
 }
 
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm tài khoản", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,9 +21,9 @@
             @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserName }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserName }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserName })
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.UserName }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.UserName }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.UserName })
         </td>
     </tr>
 }

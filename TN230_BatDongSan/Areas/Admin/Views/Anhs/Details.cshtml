@@ -1,10 +1,8 @@
 ﻿@model DbContextModel.Framework.Anh
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Chi tiết - Ảnh";
 }
-
-<h2>Details</h2>
 
 <div>
     <h4>Anh</h4>
@@ -21,6 +19,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaAnh }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaAnh }) |
+    @Html.ActionLink("Xem danh sách", "Index")
 </p>
