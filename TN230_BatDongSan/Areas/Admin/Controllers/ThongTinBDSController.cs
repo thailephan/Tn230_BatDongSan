@@ -10,6 +10,7 @@ using DbContextModel.Framework;
 
 namespace TN230_BatDongSan.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ThongTinBDSController : Controller
     {
         private DbContextWeb db = new DbContextWeb();

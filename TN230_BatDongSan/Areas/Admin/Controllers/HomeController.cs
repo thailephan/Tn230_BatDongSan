@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace TN230_BatDongSan.Areas.Admin.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         // GET: Admin/Home

@@ -4,6 +4,7 @@ namespace DbContextModel.Framework
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Collections.Generic;
 
     public partial class DbContextWeb : DbContext
     {
@@ -21,6 +22,11 @@ namespace DbContextModel.Framework
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<ThongTin> ThongTins { get; set; }
         public virtual DbSet<ThongTinBDS> ThongTinBDS { get; set; }
+
+        public List<TaiKhoan> LoginByUsernamePassword (string UserName, string password)
+        {
+            return this.TaiKhoans.Where(m => m.UserName == UserName && m.Password == password).Select( m => m).ToList();
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
