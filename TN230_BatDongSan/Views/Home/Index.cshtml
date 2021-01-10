@@ -6,9 +6,9 @@
 
 @section scripts{
     <script>
-        var  mahuong = makhudancu = maloaibds = -1;
-        function showInfo(e) {
-            console.log(e.value)
+        var  mahuong = makhudancu = maloaibds = maquanhuyen = giatien = -1;
+        function showInfo() {
+            console.log(mahuong, makhudancu, maloaibds, maquanhuyen, giatien)
             $.ajax({
                 url: "/Home/showInfo",
                 success: function (result) {
@@ -16,25 +16,77 @@
                 },
                 data: {
                     id_mahuong: mahuong,
-                    id_makhudancu: makhudancu,
-                    id_maloaibds: maloaibds
+                    id_khudancu: makhudancu,
+                    id_maloaibds: maloaibds,
+                    id_maquanhuyen: maquanhuyen,
+                    id_giatien: giatien
                 }
 
             });
         }
-    showInfo({ value: -1 })
+        showInfo()
+
+        function changeHuong(e) {
+            if ($("#MaHuong").val() === "") {
+                mahuong = -1;
+            } else mahuong = $("#MaHuong").val()
+        }
+
+        function changeKhuDanCu(e) {
+            if ($("#MaKhuDanCu").val() === "") {
+                makhudancu = -1;
+            } else makhudancu = $("#MaKhuDanCu").val()
+        }
+
+        function changeLoai(e) {
+            if ($("#MaLoai").val() === "") {
+                maloaibds = -1;
+            } else maloaibds = $("#MaLoai").val()
+        }
+
+        function changeQuanHuyen(e) {
+            if ($("#MaQuanHuyen").val() === "") {
+                maquanhuyen = -1;
+            } else maquanhuyen = $("#MaQuanHuyen").val()
+        }
+
+        function changeGia(e) {
+            if ($("#GiaTien").val() === "") {
+                giatien = -1;
+            }     
+            else giatien = $("#GiaTien").val()
+        }
+
 
     </script>
 }
 
+
 <p>
     @Html.ActionLink("Tạo mới", "Create")
 </p>
+<h3>
+    Lọc theo
+</h3>
 <div class="form-group">
-    <span class="p5">Chọn hướng: </span>
-    @Html.DropDownList("MaKhuDanCu", (SelectList)ViewBag.ListKhuDanCu, "Chọn khu dân cư", htmlAttributes: new { @class = "", @onchange = "showInfo(this);" })
-    @Html.DropDownList("MaLoai", (SelectList)ViewBag.ListLoaiBDS, "Chọn loại", htmlAttributes: new { @class = "", @onchange = "showInfo(this);" })
-    @Html.DropDownList("MaHuong", (SelectList)ViewBag.ListHuong, "Chọn mã hướng", htmlAttributes: new { @class = "", @onchange = "showInfo(this);" })
+    @using (Html.BeginForm("viewSearch", "Home"))
+    {
+        @Html.DropDownList("MaKhuDanCu", (SelectList)ViewBag.ListKhuDanCu, "Hiển thị tất cả khu dân cư", htmlAttributes: new { @class = "", @onchange = "changeKhuDanCu(this);" })
+        @Html.DropDownList("MaLoai", (SelectList)ViewBag.ListLoaiBDS, "Hiển thị tất cả loại", htmlAttributes: new { @class = "", @onchange = "changeLoai(this);" })
+        @Html.DropDownList("MaHuong", (SelectList)ViewBag.ListHuong, "Hiển thị tất cả hướng", htmlAttributes: new { @class = "", @onchange = "changeHuong(this);" })
+        @Html.DropDownList("MaQuanHuyen", (SelectList)ViewBag.ListQuanHuyen, "Hiển thị tất quận huyện", htmlAttributes: new { @class = "", @onchange = "changeQuanHuyen(this);" })
+        <select class="" id="GiaTien" name="GiaTien" onchange="changeGia(this);">
+            <option value="">Hiển thị giá</option>
+            <option value="0">0 - 500 triệu</option>
+            <option value="1">500 triệu - 1 tỷ</option>
+            <option value="2">1 tỷ - 2 tỷ</option>
+            <option value="3">2 tỷ - 3 tỷ</option>
+            <option value="4">3 tỷ - 4 tỷ</option>
+            <option value="5">trên 4 tỷ</option>
+        </select>
+        <input type="text" actions="viewSearch" placeholder="Tìm kiếm địa điểm, khu vực" value="" class="search-bar-input ui-autocomplete-input" id="search-suggestion" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+        <input type="submit" id="btnSearch" class="btn-blue-7" value="Tìm kiếm">
+    }
 </div>
 
 <div id="data">

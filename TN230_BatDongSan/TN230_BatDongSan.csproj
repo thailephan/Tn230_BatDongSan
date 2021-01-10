@@ -2132,6 +2132,7 @@
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_BDSCard.cshtml" />
     <Content Include="Views\Home\showInfo.cshtml" />
+    <Content Include="Views\Home\viewSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
