@@ -10,22 +10,32 @@
 <table class="table">
     <tr>
         <th>
+            STT
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.TenKhuDanCu)
         </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenKhuDanCu)
-        </td>
-        <td>
-            @Html.ActionLink("Sửa", "Edit", new { id=item.MaKhuDanCu }) |
-            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaKhuDanCu }) |
-            @Html.ActionLink("Xóa", "Delete", new { id=item.MaKhuDanCu })
-        </td>
-    </tr>
-}
+    @{
+        var i = 1;
+    }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @i
+                @{ i++; }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenKhuDanCu)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MaKhuDanCu }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaKhuDanCu }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaKhuDanCu })
+            </td>
+        </tr>
+    }
 
 </table>

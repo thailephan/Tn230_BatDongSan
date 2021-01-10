@@ -2130,6 +2130,7 @@
     <Content Include="Views\ThongTins\Index.cshtml" />
     <Content Include="Views\QuanHuyens\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\_BDSCard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

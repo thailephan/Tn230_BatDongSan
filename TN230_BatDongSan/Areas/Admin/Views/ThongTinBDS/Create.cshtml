@@ -4,21 +4,18 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
-
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ThongTinBDS</h4>
+        <h4>Thêm mới</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.TieuDe, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TieuDe, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.TieuDe, null, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TieuDe, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +47,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.MoTa, 6, 20, new { @class = "form-control ckeditor" })
                 @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -72,48 +69,56 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaHuong, "MaHuong", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Huong.TenHuong, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MaHuong", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("MaHuong", null, "Chọn hướng", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaHuong, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaUser, "MaUser", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ThongTin.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MaUser", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("MaUser", null, "Chọn người dùng", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaUser, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaLoai, "MaLoai", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.LoaiBD.TenLoai, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MaLoai", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("MaLoai", null, "Chọn loại bất động sản", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaLoai, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaQuanHuyen, "MaQuanHuyen", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.QuanHuyen.TenQuanHuyen, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MaQuanHuyen", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("MaQuanHuyen", null, "Chọn quận huyện", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaQuanHuyen, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaKhuDanCu, "MaKhuDanCu", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.KhuDanCu.TenKhuDanCu, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MaKhuDanCu", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("MaKhuDanCu", null, "Chọn khu dân cư", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaKhuDanCu, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
+            <label>Hình ảnh cung cấp</label>
+            <div class="custom-file col-md-10 mx-3">
+                <input type="file" class="custom-file-input" id="customFile" multiple >
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" id="btn-create" />
             </div>
         </div>
     </div>
@@ -125,4 +130,18 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $("#btn-create").attr("disabled", true)
+
+        $(".custom-file-input").on("change", function () {
+            console.log($(this)[0].files);
+            if ($(this)[0].files.length >= 3) {
+                $("#btn-create").removeAttr("disabled")
+            } else {
+                $("#btn-create").attr("disabled", true)
+            }
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
 }

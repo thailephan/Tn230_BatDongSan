@@ -1,7 +1,9 @@
-﻿@{
+﻿@using DbContextModel.Framework;
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
+<div class="container">
+    @Html.Partial("~/Views/Shared/_BDSCard.cshtml", new ThongTinBDS())
 </div>

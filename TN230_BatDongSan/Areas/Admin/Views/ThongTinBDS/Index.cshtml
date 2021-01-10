@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            STT
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Huong.TenHuong)
         </th>
         <th>
@@ -50,50 +53,58 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Huong.TenHuong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KhuDanCu.TenKhuDanCu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LoaiBD.TenLoai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuanHuyen.TenQuanHuyen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThongTin.HoTen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TieuDe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayTao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChieuDai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChieuRong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoTa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SDTChuBan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gia)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaTin }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaTin }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaTin })
-        </td>
-    </tr>
-}
+    @{
+        var i = 1;
+    }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @i
+                @{ i++; }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Huong.TenHuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhuDanCu.TenKhuDanCu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiBD.TenLoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuanHuyen.TenQuanHuyen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThongTin.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TieuDe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayTao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChieuDai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChieuRong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDTChuBan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaTin }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaTin }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaTin })
+            </td>
+        </tr>
+    }
 
 </table>

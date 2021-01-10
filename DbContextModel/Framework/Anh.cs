@@ -1,4 +1,4 @@
-namespace DbContextModel.Framework
+﻿namespace DbContextModel.Framework
 {
     using System;
     using System.Collections.Generic;
@@ -10,12 +10,14 @@ namespace DbContextModel.Framework
     public partial class Anh
     {
         [Key]
+        [Display(Name = "Mã ảnh")]
         public int MaAnh { get; set; }
 
         [Required]
         [StringLength(300)]
+        [Display(Name = "Đường dẫn")]
         public string DuongDan { get; set; }
-
+        [Display(Name = "Mã tin")]
         public int? MaTin { get; set; }
 
         public virtual ThongTinBDS ThongTinBDS { get; set; }

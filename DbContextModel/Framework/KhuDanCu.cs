@@ -1,4 +1,4 @@
-namespace DbContextModel.Framework
+﻿namespace DbContextModel.Framework
 {
     using System;
     using System.Collections.Generic;
@@ -15,10 +15,12 @@ namespace DbContextModel.Framework
             ThongTinBDS = new HashSet<ThongTinBDS>();
         }
 
+        [Display(Name = "Mã khu dân cư")]
         [Key]
         public int MaKhuDanCu { get; set; }
 
         [Required]
+        [Display(Name = "Tên khu dân cư")]
         [StringLength(2000)]
         public string TenKhuDanCu { get; set; }
 

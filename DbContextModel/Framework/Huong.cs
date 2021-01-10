@@ -1,4 +1,4 @@
-namespace DbContextModel.Framework
+﻿namespace DbContextModel.Framework
 {
     using System;
     using System.Collections.Generic;
@@ -16,9 +16,11 @@ namespace DbContextModel.Framework
         }
 
         [Key]
+        [Display(Name = "Mã hướng")]
         public int MaHuong { get; set; }
 
         [Required]
+        [Display(Name = "Tên hướng")]
         [StringLength(50)]
         public string TenHuong { get; set; }
 
