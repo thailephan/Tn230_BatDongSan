@@ -50,7 +50,9 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 Console.Write(ex);
             }
             // Info.    
-            return this.View();
+            this.SignInUser("jhhhhhh", false);
+            // Info.    
+            return this.RedirectToLocal(returnUrl);
         }
         /// <summary>  
         /// POST: /Account/Login    

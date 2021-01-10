@@ -4,6 +4,38 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="container">
-    @Html.Partial("~/Views/Shared/_BDSCard.cshtml", new ThongTinBDS())
+@section scripts{
+    <script>
+        var  mahuong = makhudancu = maloaibds = -1;
+        function showInfo(e) {
+            console.log(e.value)
+            $.ajax({
+                url: "/Home/showInfo",
+                success: function (result) {
+                    $("#data").html(result);
+                },
+                data: {
+                    id_mahuong: mahuong,
+                    id_makhudancu: makhudancu,
+                    id_maloaibds: maloaibds
+                }
+
+            });
+        }
+    showInfo({ value: -1 })
+
+    </script>
+}
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<div class="form-group">
+    <span class="p5">Chọn hướng: </span>
+    @Html.DropDownList("MaKhuDanCu", (SelectList)ViewBag.ListKhuDanCu, "Chọn khu dân cư", htmlAttributes: new { @class = "", @onchange = "showInfo(this);" })
+    @Html.DropDownList("MaLoai", (SelectList)ViewBag.ListLoaiBDS, "Chọn loại", htmlAttributes: new { @class = "", @onchange = "showInfo(this);" })
+    @Html.DropDownList("MaHuong", (SelectList)ViewBag.ListHuong, "Chọn mã hướng", htmlAttributes: new { @class = "", @onchange = "showInfo(this);" })
+</div>
+
+<div id="data">
 </div>

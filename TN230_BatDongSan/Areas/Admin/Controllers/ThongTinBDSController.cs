@@ -40,18 +40,20 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // GET: Admin/ThongTinBDS/Create
         public ActionResult Create()
         {
+            ThongTinBDS thongTinBDS = new ThongTinBDS();
+            thongTinBDS.NgayTao = DateTime.Now;
             ViewBag.MaHuong = new SelectList(db.Huongs, "MaHuong", "TenHuong");
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu");
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai");
             ViewBag.MaQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen");
             ViewBag.MaUser = new SelectList(db.ThongTins, "MaUser", "HoTen");
-            return View();
+            return View(thongTinBDS);
         }
 
         // POST: Admin/ThongTinBDS/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS)
         {
@@ -93,7 +95,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // POST: Admin/ThongTinBDS/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS)
         {
