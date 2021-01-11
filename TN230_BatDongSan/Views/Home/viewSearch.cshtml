@@ -1,106 +1,24 @@
 ﻿@model IEnumerable<DbContextModel.Framework.ThongTinBDS>
 
 @{
+    ViewBag.Title = "viewSearch";
 }
 
-<!DOCTYPE html>
+@foreach (var item in Model)
+  {
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>viewSearch</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Cegfegesgsdgsdgitw", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TieuDe)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayTao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ChieuDai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ChieuRong)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MoTa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SDTChuBan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaHuong)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaLoai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaQuanHuyen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaKhuDanCu)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TieuDe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayTao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChieuDai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChieuRong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MoTa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SDTChuBan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaHuong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaUser)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaLoai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaQuanHuyen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaKhuDanCu)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.MaTin }) |
-                @Html.ActionLink("Details", "Details", new { id=item.MaTin }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.MaTin })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
-</html>
+
+        <div class="bg-dark text-white m-3">
+            <img style="width:200px; " alt="Chính chủ cần bán gấp nhà 4 tầng tại Nam Từ Liêm, diện tích 47m2, giá 4,85 tỷ" src="https://file4.batdongsan.com.vn/crop/350x232/2020/12/10/YOQqf9mk/20201210115130-bdc6_wm.jpg">
+
+            @Html.DisplayFor(modelItem => item.TieuDe)
+            @Html.DisplayFor(modelItem => item.ChieuDai)
+            @Html.DisplayFor(modelItem => item.ChieuRong)
+            @Html.DisplayFor(modelItem => item.SDTChuBan)
+            @Html.DisplayFor(modelItem => item.Gia)
+            @Html.DisplayFor(modelItem => item.MoTa)
+
+        </div>
+
+  }
+
