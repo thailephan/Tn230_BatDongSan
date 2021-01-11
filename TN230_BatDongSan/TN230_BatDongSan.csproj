@@ -1865,6 +1865,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MyCSS.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -2130,9 +2131,8 @@
     <Content Include="Views\ThongTins\Index.cshtml" />
     <Content Include="Views\QuanHuyens\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
-    <Content Include="Views\Shared\_BDSCard.cshtml" />
     <Content Include="Views\Home\showInfo.cshtml" />
-    <Content Include="Views\Home\viewSearch.cshtml" />
+    <Content Include="Views\Home\ViewSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

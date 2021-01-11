@@ -55,7 +55,7 @@ namespace TN230_BatDongSan.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult viewSearch(int MaHuong = -1, int MaKhuDanCu = -1, int MaLoai = -1, int MaQuanHuyen = -1, int GiaTien = -1)
+        public ActionResult ViewSearch(int MaHuong = -1, int MaKhuDanCu = -1, int MaLoai = -1, int MaQuanHuyen = -1, int GiaTien = -1)
         {
             ViewBag.GGG = MaHuong;
             var dsbds = db.ThongTinBDS.ToList();
