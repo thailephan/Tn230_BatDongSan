@@ -1,0 +1,2766 @@
+﻿html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt,
+var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select {
+    font - family: 'Roboto', Tahoma;
+    font - size: 14 px
+}
+
+body {
+    background: #fff;
+    min - width: 1024 px
+}
+
+ul li {
+    list - style: none
+}
+
+.home - center {
+    width: 1920 px;
+    max - width: 100 %;
+    margin: 0 auto
+}
+
+#
+interestedProductsBinnovaContent {
+    overflow: hidden
+}
+
+.clear {
+    clear: both
+}
+
+.price - range - block {
+    margin: 60 px
+}
+
+.sliderText {
+    width: 40 %;
+    margin - bottom: 30 px;
+    border - bottom: 2 px solid# f00;
+    padding: 10 px 0 10 px 0;
+    font - weight: bold
+}
+
+.ui - slider - horizontal {
+    height: .6e m
+}
+
+.ui - slider - horizontal {
+    margin - bottom: 15 px;
+    width: 40 %
+}
+
+.price - range - search {
+    width: 40.5 %;
+    background - color: #f9f9f9;
+    border: 1 px solid #6e6666;
+    min-width: 40%;
+    display: inline-block;
+    height: 32px;
+    border-radius: 5px;
+    float: left;
+    margin-bottom: 20px;
+    font-size: 16px
+}
+
+.price-range-field {
+    width: 20%;
+    min-width: 16%;
+    background-color: # f9f9f9;
+    border: 1 px solid #6e6666;
+    color: # 000;
+    border - radius: 5 px;
+    height: 26 px;
+    padding: 5 px
+}
+
+.search - results - block {
+    position: relative;
+    display: block;
+    clear: both
+}
+
+.home - small {
+    width: 1120 px;
+    margin: 0 auto;
+    margin - top: 30 px;
+    position: relative
+}
+
+    .home - small - main {
+        width: 840 px;
+        margin - right: 30 px;
+        margin - bottom: 20 px;
+        float: left;
+        min - height: 500 px
+    }
+
+        .home - small - main - 1 {
+            width: 450 px;
+            float: left
+        }
+
+        .home - small - main - 2 {
+            width: 360 px;
+            float: right
+        }
+
+    .home - small - banner {
+        width: 250 px;
+        float: right
+    }
+
+    .home - small - heading {
+        border - bottom: 1 px solid# ececec;
+        margin - bottom: 24 px
+    }
+
+        .home - small - heading ul {
+            float: left
+        }
+
+            .home - small - heading ul li {
+                list - style: none;
+                display: inline - block;
+                margin - right: 30 px;
+                padding - right: 10.635 px
+            }
+
+                .home - small - heading ul li h2 {
+                    margin - bottom: 0
+                }
+
+                    .home - small - heading ul li h2 a {
+                        font - weight: 600;
+                        font - size: 24 px;
+                        line - height: 38 px;
+                        text - transform: capitalize;
+                        color: #777;
+                        display: block;
+                        margin-bottom: 15px
+                    }
+
+.home-small-heading ul li h2 a.actived {
+    color: # 2 d373f;
+    position: relative;
+    font - weight: bold !important
+}
+
+.home - small - heading ul li h2 a: hover {
+    color: #055699;
+    position: relative
+}
+
+.home-small-heading ul li h2 a.actived:before {
+    position: absolute;
+    border: 2px solid # 3 c9f10;
+    background: #3c9f10;
+    width: 46px;
+    line-height: 1px;
+    border-radius: 10px;
+    bottom: -15px;
+    content: ''
+}
+
+.home-small-heading .home-small-more {
+    float: right;
+    color: # 055699;
+    line - height: 16 px;
+    margin - top: 13 px
+}
+
+.home - small - heading.home - small - more img {
+    margin - left: 6 px;
+    width: 11 px
+}
+
+.home - small - heading.home - small - more img, .home - more - link img {
+    width: 11 px
+}
+
+.home - small - heading.home - small - more: hover img, .home - more - link: hover img {
+    transform: translateX(3 px)
+}
+
+.news - show a span {
+    width: 100 %;
+    display: block;
+    height: 265 px;
+    margin - bottom: 15 px;
+    text - align: center
+}
+
+.news - show a img {
+    width: 100 %;
+    display: inline - block;
+    height: 100 %
+}
+
+.news - show a {
+    font - style: normal;
+    font - weight: bold;
+    font - size: 24 px;
+    line - height: 36 px;
+    color: #2d373f;
+    display: block;
+    margin-bottom: 7px;
+    word-wrap: break-word
+}
+
+.news-show a:hover {
+    color: # 055699
+}
+
+.home - small - main - 1.news - time {
+    font - size: 14 px;
+    text - transform: none;
+    color: #777
+}
+
+.home-small .ui-widget-content {
+    border: none;
+    padding: 0
+}
+
+.home-small-main-1 .news-time img {
+    vertical-align: middle;
+    margin-right: 8px;
+    float: left;
+    width: 16px
+}
+
+.ui-tabs-panel {
+    width: 100% !important
+}
+
+.home-small-main-2 .list-news .ui-widget-header {
+    background: # fff;
+    border - radius: 0;
+    border: none
+}
+
+.home - small - main - 2.list - news ul li {
+    list - style: none;
+    display: block;
+    padding - bottom: 15 px !important;
+    margin - bottom: 15 px !important;
+    border: none;
+    border - bottom: 1 px solid# ececec !important;
+    background: #fff;
+    white - space: normal;
+    border - radius: 0;
+    width: 100 %
+}
+
+    .home - small - main - 2.list - news ul li: last - child {
+        border - bottom: none !important
+    }
+
+    .home - small - main - 2.list - news ul li a {
+        font - size: 16 px;
+        line - height: 24 px;
+        color: #4f4f4f;
+        font-weight: normal;
+        padding: 0;
+        word-wrap: break-word;
+        display: block
+    }
+
+.home-small-main-2 .list-news ul li.active a, .home-small-main-2 .list-news ul li:hover a {
+    color: # 055699
+}
+
+.home - small - main - 2.list - news ul li: hover, .home - small - main - 2.list - news ul li a: hover {
+    background: #fff !important
+}
+
+.m - b - 20 {
+    margin - bottom: 20 px
+}
+
+.home - product {
+    width: 1124 px;
+    margin: 0 auto;
+    padding: 28 px 0 30 px;
+    border: none
+}
+
+.bg - grey {
+    background: #f0f2f5
+}
+
+.bg - grey2, .home - list - tag, .home - list - tag.footer - middle {
+    background: #f5f5f5
+}
+
+.home - product ul li {
+    list - style: none;
+    background: #fff;
+    float: left;
+    width: 257 px;
+    margin: 0 32 px 30 px 0;
+    border - radius: 5 px
+}
+
+    .home - product ul li: hover {
+        box - shadow: 0 2 px 8 px rgba(3, 44, 71, .12)
+    }
+
+    .home - product ul li: nth - child(4 n + 4) {
+        margin - right: 0
+    }
+
+.home - product.product - thumb {
+    width: 257 px;
+    height: 144 px;
+    position: relative
+}
+
+    .home - product.product - thumb: after {
+        position: absolute;
+        height: 40 px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear - gradient(180 deg, rgba(0, 0, 0, 0) 0 %, rgba(0, 0, 0, .48) 100 % );
+        content: '';
+        width: 100 %;
+        z - index: 2;
+        border - radius: 0 0 0 4 px
+    }
+
+    .home - product.product - thumb.noimage: after {
+        background: none
+    }
+
+    .home - product.product - thumb a img {
+        width: 100 %;
+        height: 100 %;
+        border - radius: 4 px 4 px 0 0;
+        object - fit: cover
+    }
+
+.home - product - bound {
+    padding: 8 px 12 px 10 px 12 px;
+    border - top: none;
+    box - sizing: border - box;
+    border - radius: 0 0 4 px 4 px
+}
+
+    .home - product - bound.p - title a {
+        display: -webkit - box;
+        height: 40 px;
+        overflow: hidden;
+        - webkit - line - clamp: 2;
+        position: relative;
+        text - overflow: ellipsis;
+        white - space: normal;
+        word - wrap: break -word;
+        - webkit - box - orient: vertical;
+        color: #004e7f;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 4px
+    }
+
+.home-product-bound .product-info a {
+    font-weight: normal;
+    font-size: 14px;
+    color: # 777
+}
+
+.home - product - bound.product - info a: hover {
+    text - decoration: underline
+}
+
+.product - 4 - you.p - title a {
+    width: 100 %;
+    box - sizing: border - box
+}
+
+.product - 4 - you.p - title span {
+    font - weight: 500;
+    font - family: Roboto
+}
+
+.product - 4 - you.vip0.p - title a {
+    color: #c12f25;
+    text - indent: 20 px;
+    text - transform: uppercase;
+    background: url('../../images/icons/16x16/ic_star.svg') no - repeat left 0
+}
+
+.product - 4 - you.vip1.p - title a {
+    color: #c12f25;
+    text - transform: uppercase
+}
+
+.product - 4 - you.vip2.p - title a, .product - 4 - you.vip4.p - title a {
+    color: #fa541c;
+    text - transform: uppercase
+}
+
+.product - 4 - you.vip3.p - title a {
+    color: #fa541c
+}
+
+.product - 4 - you.vip5.p - title a {
+    color: #004e7f
+}
+
+.product-4-you .p-title a {
+    overflow: hidden !important
+}
+
+.product-4-you .product-feature {
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+    .product-4-you .product-feature img {
+        margin-left: -10px
+    }
+
+.product-4-you a .pr360 {
+    background: # 3e9 c10;
+    color: #fff;
+    display: inline - block;
+    height: 20 px;
+    line - height: 20 px;
+    padding: 0 2 px;
+    text - align: center;
+    font - size: 14 px;
+    border - radius: 5 px;
+    margin - right: 5 px
+}
+
+.home - product - bound.product - price {
+    font - family: Roboto;
+    font - style: normal;
+    font - weight: bold;
+    font - size: 14 px;
+    line - height: 20 px;
+    color: #2c2f36;
+    width: auto;
+    float: left;
+    margin-right: 8px
+}
+
+.home-product-bound .product-address, .home-product-bound .product-address a {
+    display: inline-block;
+    width: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 4px 0 6px 0;
+    color: # 2 c2f36
+}
+
+.home - product - bound.product - address a {
+    display: inline
+}
+
+    .home - product - bound.product - address a: hover {
+        text - decoration: underline
+    }
+
+.home - product - bound.product - date {
+    font - family: Roboto;
+    font - style: normal;
+    font - weight: normal;
+    font - size: 14 px;
+    line - height: 20 px;
+    color: #747c87;
+    cursor: default;
+    position: relative;
+    display: inline-block
+}
+
+.home-product-bound .product-date .tooltip-time {
+    visibility: hidden;
+    color: # fff;
+    background: rgba(10, 13, 20, .8);
+    border - radius: 4 px;
+    padding: 6 px 12 px;
+    position: absolute;
+    z - index: 1;
+    margin - left: 8 px;
+    top: -6 px;
+    line - height: 20 px
+}
+
+.home - product - bound.product - date: hover.tooltip - time {
+    visibility: visible
+}
+
+.product - 4 - you.product - media {
+    position: absolute;
+    bottom: 8 px;
+    right: 8 px;
+    color: #fff;
+    padding - right: 20 px;
+    background: url(.. / .. / images / icons / 16 x16 / Union.svg) no - repeat right 1 px;
+    z - index: 3
+}
+
+.home - product - bound.ic_dot {
+    font - family: Roboto;
+    font - style: normal;
+    font - weight: bold;
+    font - size: 14 px;
+    color: #747c87;
+    float: left
+}
+
+.home-product-bound .pro-m2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: # 2 c2f36;
+    width: auto;
+    float: left;
+    margin - left: 8 px
+}
+
+.home - small h2, .home - product h2 {
+    font - size: 28 px;
+    line - height: 38 px;
+    text - transform: none;
+    color: #2d373f;
+    margin-bottom: 20px
+}
+
+.home-social {
+    display: block !important
+}
+
+    .home-social h2 {
+        text-transform: none
+    }
+
+    .home-social .mkt-text {
+        float: right;
+        font-size: 14px;
+        line-height: 38px;
+        color: # 055699
+    }
+
+.home - social.mkt - text a {
+    color: #055699
+}
+
+.fl {
+    float: left
+}
+
+.home-more-link, .home-product .home-more-link {
+    float: right;
+    font-size: 13px;
+    line-height: 38px;
+    color: # 055699
+}
+
+.home - more - link a {
+    color: #055699;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px
+}
+
+.product-info img {
+    float: left;
+    margin-top: 5px;
+    margin-right: 13px
+}
+
+.product-info {
+    font-size: 14px;
+    line-height: 26px;
+    color: # 777
+}
+
+.home - viewmore {
+    text - align: center;
+    text - align: center
+}
+
+    .home - viewmore img {
+        vertical - align: middle;
+        width: 14 px
+    }
+
+    .home - viewmore a {
+        border: 1 px solid #055699;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: 9px 20px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+        color: # 055699
+    }
+
+.home - product - place h2, .home - hotnews h2 {
+    font - size: 28 px;
+    line - height: 38 px;
+    text - transform: none;
+    color: #2d373f;
+    margin-bottom: 20px
+}
+
+.place-big {
+    float: left;
+    width: 560px;
+    max-height: 370px;
+    overflow: hidden;
+    margin-right: 10px
+}
+
+.place-small {
+    float: right;
+    width: 550px;
+    overflow: hidden
+}
+
+.place-item {
+    width: 270px;
+    margin-right: 10px;
+    margin-bottom: 12px;
+    float: left;
+    max-height: 178px
+}
+
+    .place-item:nth-child(2n) {
+        margin-right: 0
+    }
+
+.nomargin {
+    margin-bottom: 0
+}
+
+.home-product-place .place-big, .home-product-place .place-item {
+    position: relative
+}
+
+.home-product-place .place-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: # fff;
+    width: 100 %;
+    height: 100 %
+}
+
+.home - product - place.place - info a {
+    color: #fff;
+    display: block;
+    padding - top: 20 px;
+    padding - left: 28 px;
+    width: 100 %;
+    height: 100 %;
+    box - sizing: border - box
+}
+
+.home - product - place.place - info h3 {
+    width: 100 %;
+    height: 100 %
+}
+
+.home - product - place.place - info.place - name {
+    font - weight: bold;
+    font - size: 26 px;
+    line - height: 30 px;
+    text - transform: capitalize;
+    display: block
+}
+
+.home - product - place.place - info.place - number {
+    font - size: 18 px;
+    line - height: 30 px;
+    font - weight: normal
+}
+
+.home - product - place.place - info a: hover.place - name, .home - product - place.place - info a: hover.place - number {
+    text - decoration: underline
+}
+
+.home - product - place.place - img {
+    position: relative
+}
+
+    .home - product - place.place - img: after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100 %;
+        height: 100 %;
+        background: linear - gradient(180 deg, rgba(0, 0, 0, 0) 0 %, rgba(0, 0, 0, .65) 100 % );
+        transform: rotate(-180 deg)
+    }
+
+.place - small.place - img {
+    width: 270 px
+}
+
+    .place - small.place - img img {
+        width: 100 %;
+        vertical - align: top
+    }
+
+.home - tag {
+    padding: 15 px 0;
+    overflow: hidden
+}
+
+    .home - tag ul {
+        width: 10000 px\ 9;
+        overflow: hidden\ 9
+    }
+
+        .home - tag ul li {
+            display: inline - block;
+            float: left;
+            margin - right: 11 px;
+            background: #ececec;
+            border - radius: 5 px;
+            padding: 8 px 14 px;
+            width: auto
+        }
+
+            .home - tag ul li a {
+                font - size: 14 px;
+                line - height: 24 px;
+                text - align: center;
+                text - transform: capitalize;
+                color: #777;
+                font-weight: normal
+            }
+
+.home-tag ul li a:hover {
+    color: # 055699
+}
+
+.banner - middle {
+    margin: 20 px auto
+}
+
+.home - project, .home - hotnews, .home - social {
+    position: relative
+}
+
+    .home - project ul, .home - hotnews ul, .home - social ul, .home - enterprise ul {
+        width: 20000000 px
+    }
+
+        .home - project ul li, .home - hotnews ul li, .home - social ul li, .home - enterprise ul li {
+            float: left
+        }
+
+    .home - project - link a {
+        float: right;
+        font - size: 12 px;
+        line - height: 25 px;
+        color: #055699
+    }
+
+.home-project ul {
+    margin: 0 0 0
+}
+
+    .home-project ul li {
+        width: 261px;
+        list-style: none
+    }
+
+        .home-project ul li img {
+            display: block;
+            margin-bottom: 15px
+        }
+
+        .home-project ul li a {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+            color: # 2 d373f;
+            margin: 15 px 0
+        }
+
+.hotnews - img {
+    height: 200 px;
+    margin - bottom: 15 px
+}
+
+    .hotnews - img img {
+        width: 100 %;
+        height: 100 %;
+        max - width: 354 px
+    }
+
+.hotnews - link span {
+    font - weight: bold;
+    font - size: 30 px;
+    line - height: 41 px;
+    text - transform: capitalize;
+    color: #055699;
+    width: 15%;
+    vertical-align: middle;
+    display: inline-block;
+    float: left
+}
+
+.hotnews-link a {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: # 2 d373f
+}
+
+.m - b - 30 {
+    margin - bottom: 30 px
+}
+
+.m - t - 30 {
+    margin - top: 30 px
+}
+
+.m - t - 38 {
+    margin - top: 38 px
+}
+
+.m - t - 46 {
+    margin - top: 46 px
+}
+
+.home - utility ul li {
+    width: 279 px;
+    height: 85 px;
+    vertical - align: middle;
+    border - right: 1 px solid# fff;
+    display: inline - block;
+    color: #fff;
+    float: left
+}
+
+    .home - utility ul li: last - child {
+        border: none
+    }
+
+    .home - utility ul li a {
+        display: block;
+        text - align: center;
+        vertical - align: middle;
+        line - height: 85 px;
+        color: #fff;
+        font - weight: 600;
+        font - size: 18 px
+    }
+
+        .home - utility ul li a: hover {
+            background: #68ae49
+        }
+
+.home-utility ul li img {
+    vertical-align: middle;
+    margin-right: 10px
+}
+
+.color-1 {
+    background: # 7 ac6ea
+}
+
+.color - 2 {
+    background: #50a9d3
+}
+
+.color-3 {
+    background: # 4 a7eb7
+}
+
+.color - 4 {
+    background: #2668a2
+}
+
+.home-enterprise {
+    position: relative;
+    width: 100%
+}
+
+    .home-enterprise ul li {
+        float: left;
+        width: 159px;
+        height: 109px;
+        text-align: center;
+        margin-right: 30px;
+        position: relative;
+        margin-bottom: 10px
+    }
+
+        .home-enterprise ul li:hover {
+            box-shadow: 0 4px 4px rgba(0,0,0,.25)
+        }
+
+        .home-enterprise ul li:last-child {
+            margin-right: 2px
+        }
+
+        .home-enterprise ul li a {
+            height: 109px;
+            display: block;
+            border: 1px solid # ececec;
+            box - sizing: border - box
+        }
+
+.home - enterprise ul li img {
+    max - height: 83 px;
+    max - width: 130 px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+    .home - enterprise ul li img.color_flip {
+        filter: url(filters.svg# grayscale);
+        filter: gray;
+        - webkit - filter: grayscale(1);
+        - webkit - transition: all.5 s ease - in -out
+    }
+
+.home - enterprise ul li a: hover img.color_flip {
+    filter: none;
+    - webkit - filter: grayscale(0)
+}
+
+.home - social {
+    margin - bottom: 46 px
+}
+
+    .home - social - img {
+        margin - bottom: 16 px;
+        max - height: 200 px
+    }
+
+    .home - social ul li {
+        max - width: 261 px
+    }
+
+    .home - social - img img {
+        height: 165 px;
+        width: calc(165 px * 320 / 202)
+    }
+
+    .home - social - link a {
+        width: 204 px;
+        display: inline - block;
+        font - weight: 600;
+        font - size: 14 px;
+        line - height: 20 px;
+        color: #2d373f
+    }
+
+.home-social-link span {
+    margin-right: 10px;
+    float: left
+}
+
+.home-list-tag {
+    margin: auto;
+    padding: 20px 0 15px;
+    width: 1120px
+}
+
+    .home-list-tag .footer-middle {
+        background: # f5f5f5;
+        border: none;
+        margin - top: 0;
+        padding: 0
+    }
+
+.home - list - tag.footer - middle - colum1 {
+    float: left;
+    margin - right: 25 px;
+    width: 261 px;
+    box - sizing: border - box
+}
+
+    .home - list - tag.footer - middle - colum1: last - child {
+        margin - right: 0
+    }
+
+    .home - list - tag.footer - middle - colum1 - title a {
+        font - weight: 600;
+        font - size: 14 px;
+        color: #2d373f;
+        text-transform: uppercase;
+        vertical-align: middle;
+        margin-top: 10px;
+        display: block
+    }
+
+.home-list-tag .footer-middle-colum1-link a {
+    color: # 055699;
+    font - style: normal;
+    font - weight: normal;
+    font - size: 13 px;
+    line - height: 24 px;
+    vertical - align: middle
+}
+
+.home - list - tag.footer - middle - colum1 h2 a {
+    line - height: 24 px;
+    font - weight: 700
+}
+
+.m - r - 15 {
+    margin - right: 15 px
+}
+
+.banner - action {
+    position: absolute;
+    bottom: 18 px;
+    width: 100 %;
+    left: 0;
+    display: table
+}
+
+.banner - info {
+    display: table - cell
+}
+
+    .banner - info a {
+        height: 90 px;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, .3);
+        border: 3 px solid rgba(0, 0, 0, .15);
+        box - sizing: border - box;
+        border - radius: 5 px;
+        padding: 15 px 20 px;
+        display: table
+    }
+
+    .banner - info a {
+        height: 100 %
+    }
+
+    .banner - info.banner - icon, .banner - info.banner - slogan {
+        display: table - cell;
+        vertical - align: middle
+    }
+
+.banner - slogan {
+    width: 390 px;
+    padding - left: 8 px
+}
+
+    .banner - slogan span {
+        display: block;
+        color: #fff;
+        text - transform: uppercase;
+        font - size: 14 px
+    }
+
+    .banner - slogan.slogan {
+        font - weight: 700;
+        font - size: 16 px;
+        line - height: 22 px;
+        margin - top: 5 px
+    }
+
+.banner - icon {
+    display: block;
+    width: 56 px;
+    height: 56 px;
+    text - align: center;
+    box - sizing: border - box;
+    margin - right: 8 px
+}
+
+    .banner - icon img {
+        display: block;
+        width: 56 px;
+        height: 56 px;
+        text - align: center;
+        padding: 8 px;
+        box - sizing: border - box;
+        border - radius: 5 px;
+        background: rgba(255, 255, 255, .9)
+    }
+
+.banner - home - slide {
+    position: relative;
+    width: 100 %;
+    background: rgba(0, 0, 0, .25)
+}
+
+    .banner - home - slide.swiper - slide img {
+        width: 100 %
+    }
+
+    .banner - home - slide.swiper - pagination - bullet {
+        width: 8 px;
+        height: 8 px;
+        border: 1 px solid# fff;
+        background: none;
+        opacity: 1
+    }
+
+    .banner - home - slide.swiper - container - horizontal > .swiper - pagination - bullets.swiper - pagination - bullet {
+        margin: 0 3 px
+    }
+
+    .banner - home - slide.swiper - container - horizontal > .swiper - pagination - bullets, .swiper - pagination - custom, .swiper - pagination - fraction {
+        bottom: 15 px;
+        left: inherit;
+        right: 15 px;
+        width: 100 px
+    }
+
+    .banner - home - slide.swiper - pagination - bullet - active {
+        background - color: #fff
+    }
+
+.swiper - button - next: after, .swiper - container - rtl.swiper - button - prev: after, .swiper - button - prev: after, .swiper - container - rtl.swiper - button - next: after {
+    content: '' !important
+}
+
+.m - t - 10 {
+    margin: 10 px 0 0
+}
+
+.m - r - 10 {
+    margin - right: 10 px
+}
+
+.m - r - 5 {
+    margin - right: 5 px
+}
+
+.ui - state - active a {
+    color: #055699 !important
+}
+
+.hide-item {
+    display: none
+}
+
+.hidden {
+    display: none
+}
+
+.home-project .swiper-button-next, .home-hotnews .swiper-button-next, .home-social .swiper-button-next, .home-enterprise .swiper-button-next {
+    background: url('https://file4.batdongsan.com.vn/images/newhome/icon3x/arrow-left.png') no-repeat;
+    width: 48px;
+    height: 48px;
+    right: -20px;
+    top: 45%;
+    background-size: 48px 47px
+}
+
+.home-project .swiper-button-prev, .home-hotnews .swiper-button-prev, .home-social .swiper-button-prev, .home-enterprise .swiper-button-prev {
+    background: url('https://file4.batdongsan.com.vn/images/newhome/icon3x/arrow-right1.png') no-repeat;
+    width: 48px;
+    height: 48px;
+    left: -20px;
+    top: 45%;
+    background-size: 48px 47px
+}
+
+    .home-project .swiper-button-next.swiper-button-disabled, .home-project .swiper-button-prev.swiper-button-disabled, .home-hotnews .swiper-button-next.swiper-button-disabled, .home-hotnews .swiper-button-prev.swiper-button-disabled, .home-social .swiper-button-next.swiper-button-disabled, .home-social .swiper-button-prev.swiper-button-disabled, .home-enterprise .swiper-button-next.swiper-button-disabled, .home-enterprise .swiper-button-prev.swiper-button-disabled {
+        opacity: 0
+    }
+
+.home-project li img {
+    width: 100%;
+    max-width: 100%;
+    height: 146px
+}
+
+.swiper-container {
+    width: 100%
+}
+
+.home-hotnews .swiper-button-next, .home-hotnews .swiper-button-prev {
+    top: 48%
+}
+
+.home-enterprise .swiper-button-next, .home-enterprise .swiper-button-prev {
+    top: 61%
+}
+
+.home-project .swiper-button-next, .home-project .swiper-button-prev {
+    top: 120px
+}
+
+.fbold a {
+    font-weight: 700;
+    font-size: 13px;
+    color: # 686868
+}
+
+.zopim {
+    right: 10 px !important
+}
+
+.login - group a {
+    float: left;
+    color: #4f4f4f
+}
+
+.login-group a span {
+    margin-left: 5px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 190px;
+    vertical-align: top;
+    font-size: 16px
+}
+
+.news-image-video-icon {
+    vertical-align: middle;
+    width: 14px
+}
+
+@media only screen and (min-width:1120px) and (max-width:1162px) {
+    .swiper-button-next {
+        right: 10px !important
+    }
+
+    .swiper-button-prev {
+        left: 10px !important
+    }
+}
+
+@media only screen and (max-width:1120px) {
+    .home-center, .home-list-tag {
+        width: 100%
+    }
+
+    .home-small, .home-product {
+        width: 984px;
+        box-sizing: border-box
+    }
+
+    .home-small-main {
+        width: 710px
+    }
+
+    .home-small-main-1 {
+        width: 395px
+    }
+
+    .home-small-main-2 {
+        width: 295px
+    }
+
+    .home-product .product-thumb {
+        width: 229px;
+        height: 131px
+    }
+
+    .home-small-main {
+        margin-right: 20px
+    }
+
+    .home-small-banner img {
+        width: 100%
+    }
+
+    .home-small-heading ul li {
+        margin-right: 5px
+    }
+
+    .home-product ul li {
+        width: 229px;
+        margin: 0 22px 22px 0
+    }
+
+    .loveMoney102 img {
+        width: 100%;
+        max-width: 100%
+    }
+
+    .place-big {
+        width: 490px
+    }
+
+    .place-small .place-img {
+        width: 235px
+    }
+
+    .place-small {
+        width: 484px
+    }
+
+    .place-item {
+        width: 237px
+    }
+
+    .home-utility ul li {
+        width: 245px
+    }
+
+    .hotnews-img {
+        width: 100%
+    }
+
+    .home-social .swiper-button-next, .home-social .swiper-button-prev {
+        top: 45%
+    }
+
+    .home-social-link a {
+        width: 175px
+    }
+
+    .home-list-tag .footer-middle-colum1 {
+        width: 227px
+    }
+
+    .home-project ul li img {
+        height: 126px
+    }
+
+    .home-project .swiper-button-next, .home-project .swiper-button-prev {
+        top: 45%
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    .home-product .product-thumb {
+        width: 100%;
+        height: calc(100%*131px/229px)
+    }
+
+    .new-home-2020 {
+        overflow: hidden
+    }
+
+        .new-home-2020 .home-small, .new-home-2020 .home-product.product-4-you {
+            padding-left: 10px;
+            padding-right: 10px
+        }
+
+    .home-small, .home-product, .home-list-tag .footer-middle {
+        width: 100%
+    }
+
+        .home-product ul {
+            width: 100%;
+            overflow: hidden
+        }
+
+            .home-product ul li {
+                width: calc(25% - 12px);
+                margin: 0 16px 22px 0;
+                overflow: hidden
+            }
+
+    .home-list-tag .footer-middle-colum1 {
+        width: calc(25% - 20px)
+    }
+
+    .home-utility ul li {
+        width: calc(25% - 1px)
+    }
+
+    .place-big {
+        width: calc(100% - 494px)
+    }
+
+    .banner-home-slide, .banner-home-slide .swiper-container, .banner-home-slide .swiper-container iframe {
+        height: 298px
+    }
+
+        .banner-home-slide .swiper-slide img.banner-img {
+            height: 298px !important
+        }
+
+    .home-list-tag .footer-middle-colum1 {
+        margin-right: 20px
+    }
+
+    .home-list-tag {
+        margin: auto 15px;
+        width: calc(100% - 15px)
+    }
+
+    .home-utility ul li a {
+        font-size: 16px
+    }
+
+    .home-utility ul li img {
+        margin-right: 5px
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .banner-home-slide, .banner-home-slide .swiper-container, .banner-home-slide .swiper-container iframe {
+        height: 298px
+    }
+
+        .banner-home-slide .swiper-slide img.banner-img {
+            height: 298px !important
+        }
+}
+
+@media only screen and (min-width:1280px) {
+    .banner-home-slide, .banner-home-slide .swiper-container, .banner-home-slide .swiper-container iframe {
+        height: 373px
+    }
+
+        .banner-home-slide .swiper-slide img.banner-img {
+            height: 373px !important
+        }
+}
+
+@media only screen and (min-width:1366px) {
+    .banner-home-slide, .banner-home-slide .swiper-container, .banner-home-slide .swiper-container iframe {
+        height: 400px
+    }
+
+        .banner-home-slide .swiper-slide img.banner-img {
+            height: 400px !important
+        }
+}
+
+@media only screen and (min-width:1440px) {
+    .banner-home-slide, .banner-home-slide .swiper-container, .banner-home-slide .swiper-container iframe {
+        height: 420px
+    }
+
+        .banner-home-slide .swiper-slide img.banner-img {
+            height: 420px !important
+        }
+}
+
+@media only screen and (min-width:1920px) {
+    .banner-home-slide, .banner-home-slide .swiper-container, .banner-home-slide .swiper-container iframe {
+        height: 560px
+    }
+
+        .banner-home-slide .swiper-slide img.banner-img {
+            height: 560px !important
+        }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+    .home-project .swiper-button-next, .home-hotnews .swiper-button-next, .home-social .swiper-button-next, .home-enterprise .swiper-button-next {
+        top: 40% !important
+    }
+
+    .home-enterprise .swiper-button-next, .home-enterprise .swiper-button-prev {
+        top: 50% !important
+    }
+
+    .home-social .swiper-button-next, .home-social .swiper-button-prev {
+        top: 37% !important
+    }
+
+    li.swiper-slide {
+        float: left
+    }
+
+    ul.swiper-wrapper, .home-tag ul {
+        width: 200000px
+    }
+}
+
+.hidden-phone {
+    border: 1px solid # 055699;
+    box - sizing: border - box;
+    border - radius: 4 px;
+    display: inline - block;
+    padding: 6 px !important;
+    line - height: 16 px !important;
+    text - align: left
+}
+
+.hidden - phone o {
+    color: #055699;
+    font-size: 13px !important;
+    line-height: 16px !important;
+    display: inline-block;
+    float: left
+}
+
+.hidden-phone span {
+    background-image: url(/Images/Products/icon-eye.svg);
+    border-radius: 2px;
+    color: # fff;
+    font - weight: bold;
+    padding: 0 !important;
+    margin - left: 5 px;
+    cursor: pointer;
+    font - size: 11 px !important;
+    line - height: 16 px !important;
+    display: inline - block !important;
+    height: 16 px;
+    width: 30 px;
+    background - position: center;
+    background - repeat: no - repeat;
+    margin: 0 !important;
+    float: right
+}
+
+.hidden - phone span.show {
+    background - image: url('/Images/Products/icon-copy.svg')
+}
+
+.middle - title {
+    vertical - align: middle;
+    line - height: 41 px
+}
+
+.html - content {
+    line - height: 20 px;
+    margin - bottom: 0 !important
+}
+
+.mnu - notify - icon - unread {
+    right: 0;
+    top: -6 px;
+    min - width: 12 px;
+    text - align: center
+}
+
+#
+notify_quick_view {
+    top: 75 px;
+    right: 10 px
+}
+
+.nqv {
+    cursor: pointer
+}
+
+    .nqv img {
+        margin - left: 0
+    }
+
+.loveMoney102 {
+    margin - bottom: 32.8 px !important
+}
+
+.banner - home - slide.loveMoney102 {
+    margin - bottom: 0 !important
+}
+
+.home - tag {
+    position: relative
+}
+
+    .home - tag ul {
+        display: flex;
+        flex - direction: row;
+        white - space: nowrap
+    }
+
+#
+news - slide.ui - tabs.ui - tabs - panel {
+    padding: 0 !important
+}
+
+.w - img - 100 img {
+    width: 100 %
+}
+
+#
+notiSave.footer a {
+    float: none;
+    font - weight: initial
+}
+
+.tooltipMarking {
+    margin: 0 0 0 18 px
+}
+
+    .tooltipMarking.iconSave {
+        margin - top: -2 px
+    }
+
+#
+notiSave.mCSB_scrollTools.mCSB_dragger.mCSB_dragger_bar {
+    width: 4 px
+}
+
+@ media only screen and(max - width: 1301 px) {
+    #
+    nav_back {
+        display: none !important
+    }
+}
+
+.slick - slider {
+    position: relative;
+    display: block;
+    box - sizing: border - box;
+    - webkit - user - select: none;
+    - moz - user - select: none;
+    - ms - user - select: none;
+    user - select: none;
+    - webkit - touch - callout: none;
+    - khtml - user - select: none;
+    - ms - touch - action: pan - y;
+    touch - action: pan - y;
+    - webkit - tap - highlight - color: transparent
+}
+
+.slick - list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0
+}
+
+    .slick - list: focus {
+        outline: none
+    }
+
+    .slick - list.dragging {
+        cursor: pointer;
+        cursor: hand
+    }
+
+.slick - slider.slick - track, .slick - slider.slick - list {
+    -webkit - transform: translate3d(0, 0, 0);
+    - moz - transform: translate3d(0, 0, 0);
+    - ms - transform: translate3d(0, 0, 0);
+    - o - transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+}
+
+.slick - track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin - left: auto;
+    margin - right: auto
+}
+
+    .slick - track: before, .slick - track: after {
+        display: table;
+        content: ''
+    }
+
+    .slick - track: after {
+        clear: both
+    }
+
+.slick - loading.slick - track {
+    visibility: hidden
+}
+
+.slick - slide {
+    display: none;
+    float: left;
+    height: 100 %;
+    min - height: 1 px
+}
+
+[dir = 'rtl'].slick - slide {
+    float: right
+}
+
+.slick - slide img {
+    display: block
+}
+
+.slick - slide.slick - loading img {
+    display: none
+}
+
+.slick - slide.dragging img {
+    pointer - events: none
+}
+
+.slick - initialized.slick - slide {
+    display: block
+}
+
+.slick - loading.slick - slide {
+    visibility: hidden
+}
+
+.slick - vertical.slick - slide {
+    display: block;
+    height: auto;
+    border: 1 px solid transparent
+}
+
+.slick - arrow.slick - hidden {
+    display: none
+}
+
+.home - search {
+    position: absolute;
+    top: 0;
+    left: calc(50 % -475.5 px);
+    width: 960 px;
+    z - index: 9
+}
+
+    .home - search.home - search - tool {
+        margin: 45 px auto 0 auto;
+        width: 960 px
+    }
+
+        .home - search.home - search - tool.home - search - tab li {
+            display: inline - block;
+            width: 159.33 px;
+            height: 20 px;
+            border - radius: 5 px 5 px 0 0;
+            font - size: 14 px;
+            line - height: 20 px;
+            text - align: center;
+            text - transform: uppercase;
+            background: #fff;
+            opacity: .85;
+            color: #777;
+            padding: 12px 0 6px 0
+        }
+
+.home-search .home-search-tool .home-search-tab li h2 {
+    font-weight: normal;
+    font-size: 14px
+}
+
+.home-search .home-search-tool .home-search-tab .actived, .home-search .home-search-tool .home-search-tab li:hover {
+    background: rgba(0,0,0,.65);
+    color: # fff;
+    cursor: pointer
+}
+
+.home - search.home - search - tool.home - search - content {
+    background: rgba(0, 0, 0, .65);
+    box - shadow: 0 4 px 4 px rgba(0, 0, 0, .25);
+    border - radius: 0 5 px 5 px 5 px;
+    padding: 9 px;
+    width: 942 px;
+    margin: 0 auto
+}
+
+    .home - search.home - search - tool.home - search - content.home - search - control {
+        background: #fff;
+        border - radius: 3 px 5 px 5 px 3 px
+    }
+
+        .home - search.home - search - tool.home - search - content.home - search - control.search - cate {
+            float: left;
+            width: 191 px;
+            height: 42 px;
+            box - sizing: border - box;
+            position: relative;
+            cursor: pointer;
+            border - right: 1 px solid# ececec
+        }
+
+            .home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options {
+                position: absolute;
+                top: 42 px;
+                left: 0;
+                width: 226 px;
+                background: #fff;
+                box - sizing: border - box;
+                display: none;
+                z - index: 10000;
+                padding: 0;
+                box - shadow: 0 4 px 4 px rgba(0, 0, 0, .25);
+                border - radius: 0;
+                min - width: 226 px !important;
+                border - left: 1 px solid #12a9d9;
+                border-right: 1px solid # 12 a9d9;
+                border - bottom: 1 px solid #12a9d9
+            }
+
+.home-search .home-search-tool .home-search-content .home-search-control .search-cate .advance-select-options ul {
+    max-height: inherit;
+    max-width: inherit;
+    min-width: 226px !important
+}
+
+    .home-search .home-search-tool .home-search-content .home-search-control .search-cate .advance-select-options ul li:hover, .home-search .home-search-tool .home-search-content .home-search-control .search-cate .advance-select-options ul li.current {
+        background: # fff
+    }
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options ul li {
+    cursor: pointer;
+    padding: 0;
+    margin: 0 14 px
+}
+
+    .home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options ul li span {
+        display: block;
+        border - bottom: 1 px dashed# c4c4c4;
+        font - size: 13 px;
+        line - height: 29 px;
+        color: #686868
+    }
+
+.home-search .home-search-tool .home-search-content .home-search-control .search-cate .advance-select-options ul li span:hover, .home-search .home-search-tool .home-search-content .home-search-control .search-cate .advance-select-options ul li span.active {
+    background: # 77 baf259 !important
+}
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options ul li span.active {
+    font - weight: bold
+}
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options ul li: last - child span {
+    border: 0
+}
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options ul li img {
+    margin - right: 6 px;
+    vertical - align: middle;
+    width: 16 px
+}
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options ul li: last - child {
+    border - bottom: 0
+}
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options ul li ul li {
+    position: relative;
+    margin: 0
+}
+
+    .home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options ul li ul li span {
+        padding - left: 25 px;
+        margin - right: 14 px
+    }
+
+    .home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options ul li ul li: last - child span {
+        border - bottom: 1 px dashed# c4c4c4
+    }
+
+    .home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options ul li ul li span: before {
+        content: 'â€¢';
+        color: #c4c4c4;
+        margin - right: 5 px
+    }
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - select - options o.active {
+    font - weight: bold
+}
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - area - options ul, .home - search.home - search - tool.home - search - content.home - search - control.search - cate.advance - price - options ul {
+    max - height: inherit
+}
+
+.advance - select - options {
+    z - index: 99
+}
+
+.new - home - 2020.advance - select - options ul li.level {
+    padding: 5 px 30 px
+}
+
+    .new - home - 2020.advance - select - options ul li.level: first - child {
+        font - weight: bold;
+        padding: 15 px 25 px;
+        font - size: 14 px;
+        position: relative
+    }
+
+        .new - home - 2020.advance - select - options ul li.level: first - child: before {
+            content: url('https://file4.batdongsan.com.vn/images/newhome/left-arrow-2.png');
+            position: absolute;
+            left: 3 px;
+            top: 16 px;
+            width: 16 px;
+            height: 16 px
+        }
+
+.new - home - 2020.advance - select - options ul li {
+    padding: 5 px 10 px;
+    color: #686868;
+    font-size: 13px
+}
+
+.new-home-2020 .advance-select-options ul li:hover, .new-home-2020 .advance-select-options ul li.current {
+    background: # 77 baf259
+}
+
+.new - home - 2020.advance - select - options ul li.active {
+    font - weight: bold
+}
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - cate.select - custom {
+    border - right: 1 px solid# ececec;
+    font - weight: bold;
+    color: #555;
+    border-radius: 3px 0 0 3px;
+    background-image: url(https://file4.batdongsan.com.vn/images/newhome/icon3x/icon-home-search.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: 14px;
+    display: block;
+    line-height: 40px;
+    background-size: 20px 21px
+}
+
+.home-search .home-search-tool .home-search-content .home-search-control .search-cate .select-custom # lblCurrCate {
+    white - space: nowrap;
+    width: 119 px;
+    overflow: hidden;
+    text - overflow: ellipsis;
+    display: inline - block;
+    margin - left: 40 px;
+    font - size: 14 px;
+    line - height: 42 px
+}
+
+.new - home - 2020.advance - select - box span.select - text {
+    width: 100 %;
+    height: 100 %;
+    position: relative;
+    font - size: 14 px;
+    display: block;
+    line - height: 40 px;
+    border - radius: 1 px;
+    color: #fff;
+    background: 0
+}
+
+    .home - search.home - search - tool.home - search - content.home - search - control.search - cate.select - custom: after, .new - home - 2020.advance - select - box span.select - text: after {
+        content: '';
+        background: url('https://file4.batdongsan.com.vn/images/newhome/icon3x/icon-down-arrow.png') no - repeat center center;
+        position: absolute;
+        right: 15 px;
+        top: 12 px;
+        width: 15 px;
+        height: 18 px;
+        background - size: 15 px 18 px
+    }
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - input {
+    float: left;
+    width: 610 px;
+    position: relative
+}
+
+    .home - search.home - search - tool.home - search - content.home - search - control.search - input.suggestTT {
+        border: 1 px solid# aaa;
+        background - color: #fff;
+        border - radius: 4 px;
+        color: #055699;
+        position: absolute;
+        z-index: 100;
+        width: 600px;
+        top: 42px
+    }
+
+.home-search .home-search-tool .home-search-content .home-search-control .search-input input[type= text] {
+    width: 100 %;
+    height: 42 px;
+    padding: 12 px 15 px;
+    font - size: 14 px;
+    box - sizing: border - box;
+    border: 0
+}
+
+.home - search.home - search - tool.home - search - content.home - search - control.search - button {
+    float: right;
+    width: 140 px
+}
+
+    .home - search.home - search - tool.home - search - content.home - search - control.search - button.btn - home - search {
+        width: 140 px;
+        background: #3c9f10 url('https://file4.batdongsan.com.vn/images/newhome/icon3x/icon-search.png') no-repeat 20px 12px;
+        border-radius: 0 5px 5px 0;
+        height: 42px;
+        text-align: center;
+        color: # fff;
+        border: 0;
+        display: block;
+        font - weight: bold;
+        font - size: 16 px;
+        padding - left: 25 px;
+        margin: 0;
+        background - size: 16 px 16 px;
+        box - sizing: border - box
+    }
+
+.home - search.home - search - tool.home - search - content.home - filter.search - filter {
+    width: 190 px;
+    box - sizing: border - box;
+    border - radius: 2 px;
+    margin - right: 10 px;
+    float: left;
+    position: relative
+}
+
+    .home - search.home - search - tool.home - search - content.home - filter.search - filter.select - custom, .new - home - 2020.advance - select - box span.select - text {
+        border: 1 px solid #777;
+        box-sizing: border-box;
+        border-radius: 3px;
+        padding-left: 15px;
+        box-sizing: border-box;
+        width: 100%
+    }
+
+.home-search .home-search-tool .home-search-content .home-filter .search-filter .advance-select-options {
+    width: 100%;
+    box-sizing: border-box
+}
+
+.home-search .home-search-tool .home-search-content .slideOpen {
+    height: 40px
+}
+
+.home-search .home-search-tool .home-search-content .slideClose {
+    -webkit-transform: perspective(1300px) rotateX(-90deg);
+    transform: perspective(1300px) rotateX(-90deg);
+    opacity: 0;
+    height: 1px
+}
+
+.home-search .home-search-tool .home-search-content .slideClose, .home-search .home-search-tool .home-search-content .slideOpen {
+    -webkit-transform-origin: 50% 0 0;
+    transform-origin: 50% 0 0;
+    -webkit-transition: -webkit-transform .3s,opacity .3s;
+    transition: transform .3s,opacity .3s
+}
+
+.home-search .home-search-tool .home-search-content .home-filter .search-action {
+    float: left
+}
+
+    .home-search .home-search-tool .home-search-content .home-filter .search-action a {
+        color: # fff;
+        line - height: 40 px;
+        vertical - align: middle;
+        display: inline - block;
+        font - size: 14 px
+    }
+
+.home - search.home - search - tool.home - search - content.home - filter.search - action a img {
+    margin - right: 5 px;
+    vertical - align: middle
+}
+
+.home - search.home - search - tool.home - search - content.home - filter.search - action a.filter - less {
+    margin - right: 3 px
+}
+
+    .home - search.home - search - tool.home - search - content.home - filter.search - action a.filter - less img {
+        margin - right: 0
+    }
+
+.home - search.home - search - tool.home - search - content.home - filter.advance - select - box.select - text span.select - text - content, .home - search.home - search - tool.home - search - content.home - filter.advance - select - box.select - text input.select - text - content {
+    width: 148 px;
+    height: 40 px;
+    line - height: 40 px;
+    font - size: 14 px;
+    padding: 0;
+    background: transparent;
+    color: #fff
+}
+
+.home - search.home - search - tool.home - search - content.home - filter.advance - select - box.select - text - focus {
+    background: #fff !important
+}
+
+.new - home - 2020.advance - select - options {
+    max - width: 188 px;
+    border - right: 1 px solid #12a9d9;
+    border-left: 1px solid # 12 a9d9;
+    border - bottom: 1 px solid #12a9d9
+}
+
+.new-home-2020 .advance-area-options ul, .new-home-2020 .advance-price-options ul {
+    max-height: none
+}
+
+.new-home-2020 .select-text-focus, .new-home-2020 .select-text-content-focus {
+    background: # fff
+}
+
+.new - home - 2020.select - text - content - focus.select - text - content {
+    color: #055699 !important
+}
+
+.new-home-2020 .advance-select-options ul {
+    overflow-x: hidden;
+    max-height: 365px;
+    min-width: 188px !important
+}
+
+.new-home-2020 .advance-select-options .max-value, .new-home-2020 .advance-select-options .min-value {
+    width: 76px;
+    height: 27px;
+    background: # fff;
+    border: 1 px solid# ececec;
+    box - sizing: border - box;
+    border - radius: 3 px
+}
+
+.new - home - 2020.advance - area - options input {
+    width: 68 px !important
+}
+
+.new - home - 2020# divAreaOptions, .new - home - 2020# divPriceOptions {
+    padding: 0
+}
+
+    .new - home - 2020# divAreaOptions.custom - scroll, .new - home - 2020# divPriceOptions.custom - scroll {
+        height: 185 px;
+        padding - left: 10 px;
+        box - sizing: border - box
+    }
+
+.new - home - 2020.advance - select - options.custom - slider {
+    font - size: 13 px;
+    text - align: center;
+    color: #686868;
+    margin-top: 10px
+}
+
+.new-home-2020 .advance-select-options .custom-slider .ui-slider-horizontal .ui-slider-range {
+    background: # 3 c9f10
+}
+
+.new - home - 2020.advance - select - options.custom - slider.ui - slider - horizontal {
+    height: 4 px;
+    border: 1 px solid# ececec;
+    clear: both;
+    margin: 20 px 10 px;
+    width: 160 px
+}
+
+.new - home - 2020.advance - select - options.custom - slider.ui - state -
+default {
+    background: #e6e6e6 url("https://file4.batdongsan.com.vn/images/newhome/slider.png") no - repeat 50 % 50 %;
+    border: 0;
+    width: 16 px;
+    height: 16 px
+}
+
+.new - home - 2020.advance - select - options.custom - slider.ui - slider - horizontal.ui - slider - handle {
+    top: -6 px
+}
+
+.new - home - 2020.advance - select - options.min - value, .new - home - 2020.advance - select - options.max - value {
+    width: 79 px;
+    border: 1 px solid# ececec;
+    box - sizing: border - box;
+    border - radius: 3 px;
+    height: 27 px;
+    font - size: 13 px;
+    text - align: center;
+    color: #999
+}
+
+.new-home-2020 .advance-select-options # area - slider - range,
+.new - home - 2020.advance - select - options# price - slider - range {
+    margin: 20 px 18 px;
+    width: 150 px
+}
+
+.new - home - 2020# divPriceOptions ul,
+.new - home - 2020# divAreaOptions ul {
+    max - height: 282 px
+}
+
+.new - home - 2020.ui - menu.ui - menu - item a {
+    font - size: 14 px
+}
+
+.home - center.banner - home - slide.banner - cover {
+    background: transparent;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z - index: 1
+}
+
+input: focus,
+textarea: focus,
+button: focus {
+    box - shadow: none !important
+}
+
+@ media only screen and(max - width: 1024 px) {
+    .home - search {
+        width: 90 %;
+        left: calc(5 % +5 px)
+    }
+
+        .home - search.home - search - tool {
+            width: calc(90 % +10 px);
+            margin: 45 px 0 0
+        }
+
+            .home - search.home - search - tool.home - search - content {
+                width: 100 %
+            }
+
+                .home - search.home - search - tool.home - search - content.home - search - control.search - input {
+                    width: calc(100 % -331 px)
+                }
+}
+
+.swiper - container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z - index: 1
+}
+
+    .swiper - container - no - flexbox.swiper - slide {
+        float: left
+    }
+
+    .swiper - container - vertical > .swiper - wrapper {
+        -webkit - box - orient: vertical;
+        - moz - box - orient: vertical;
+        - ms - flex - direction: column;
+        - webkit - flex - direction: column;
+        flex - direction: column
+    }
+
+.swiper - wrapper {
+    position: relative;
+    width: 100 %;
+    height: 100 %;
+    z - index: 1;
+    display: -webkit - box;
+    display: -moz - box;
+    display: -ms - flexbox;
+    display: -webkit - flex;
+    display: flex;
+    - webkit - transition - property: -webkit - transform;
+    - moz - transition - property: -moz - transform;
+    - o - transition - property: -o - transform;
+    - ms - transition - property: -ms - transform;
+    transition - property: transform;
+    - webkit - box - sizing: content - box;
+    - moz - box - sizing: content - box;
+    box - sizing: content - box
+}
+
+.swiper - container - android.swiper - slide,
+.swiper - wrapper {
+    -webkit - transform: translate3d(0, 0, 0);
+    - moz - transform: translate3d(0, 0, 0);
+    - o - transform: translate(0, 0);
+    - ms - transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+}
+
+.swiper - container - multirow > .swiper - wrapper {
+    -webkit - box - lines: multiple;
+    - moz - box - lines: multiple;
+    - ms - flex - wrap: wrap;
+    - webkit - flex - wrap: wrap;
+    flex - wrap: wrap
+}
+
+.swiper - container - free - mode > .swiper - wrapper {
+    -webkit - transition - timing - function: ease - out;
+    - moz - transition - timing - function: ease - out;
+    - ms - transition - timing - function: ease - out;
+    - o - transition - timing - function: ease - out;
+    transition - timing - function: ease - out;
+    margin: 0 auto
+}
+
+.swiper - slide {
+    -webkit - flex - shrink: 0;
+    - ms - flex: 0 0 auto;
+    flex - shrink: 0;
+    width: 100 %;
+    height: 100 %;
+    position: relative
+}
+
+.swiper - container - autoheight,
+.swiper - container - autoheight.swiper - slide {
+    height: auto
+}
+
+    .swiper - container - autoheight.swiper - wrapper {
+        -webkit - box - align: start;
+        - ms - flex - align: start;
+        - webkit - align - items: flex - start;
+        align - items: flex - start;
+        - webkit - transition - property: -webkit - transform, height;
+        - moz - transition - property: -moz - transform;
+        - o - transition - property: -o - transform;
+        - ms - transition - property: -ms - transform;
+        transition - property: transform, height
+    }
+
+.swiper - container.swiper - notification {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer - events: none;
+    opacity: 0;
+    z - index: -1000
+}
+
+.swiper - wp8 - horizontal {
+    -ms - touch - action: pan - y;
+    touch - action: pan - y
+}
+
+.swiper - wp8 - vertical {
+    -ms - touch - action: pan - x;
+    touch - action: pan - x
+}
+
+.swiper - button - next,
+.swiper - button - prev {
+    position: absolute;
+    top: 50 %;
+    width: 27 px;
+    height: 44 px;
+    margin - top: -22 px;
+    z - index: 10;
+    cursor: pointer;
+    - moz - background - size: 27 px 44 px;
+    - webkit - background - size: 27 px 44 px;
+    background - size: 27 px 44 px;
+    background - position: center;
+    background - repeat: no - repeat
+}
+
+    .swiper - button - next.swiper - button - disabled,
+    .swiper - button - prev.swiper - button - disabled {
+        opacity: .35;
+        cursor: auto;
+        pointer - events: none
+    }
+
+.swiper - button - prev,
+.swiper - container - rtl.swiper - button - next {
+    background - image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+    left: 10 px;
+    right: auto
+}
+
+    .swiper - button - prev.swiper - button - black,
+    .swiper - container - rtl.swiper - button - next.swiper - button - black {
+        background - image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E")
+    }
+
+    .swiper - button - prev.swiper - button - white,
+    .swiper - container - rtl.swiper - button - next.swiper - button - white {
+        background - image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E")
+    }
+
+.swiper - button - next,
+.swiper - container - rtl.swiper - button - prev {
+    background - image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+    right: 10 px;
+    left: auto
+}
+
+    .swiper - button - next.swiper - button - black,
+    .swiper - container - rtl.swiper - button - prev.swiper - button - black {
+        background - image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E")
+    }
+
+    .swiper - button - next.swiper - button - white,
+    .swiper - container - rtl.swiper - button - prev.swiper - button - white {
+        background - image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E")
+    }
+
+.swiper - pagination {
+    position: absolute;
+    text - align: center;
+    - webkit - transition: .3 s;
+    - moz - transition: .3 s;
+    - o - transition: .3 s;
+    transition: .3 s;
+    - webkit - transform: translate3d(0, 0, 0);
+    - ms - transform: translate3d(0, 0, 0);
+    - o - transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z - index: 10
+}
+
+    .swiper - pagination.swiper - pagination - hidden {
+        opacity: 0
+    }
+
+    .swiper - container - horizontal > .swiper - pagination - bullets,
+    .swiper - pagination - custom,
+    .swiper - pagination - fraction {
+        bottom: 10 px;
+        left: 0;
+        width: 100 %
+    }
+
+    .swiper - pagination - bullet {
+        width: 8 px;
+        height: 8 px;
+        display: inline - block;
+        border - radius: 100 %;
+        background: #000;
+        opacity: .2
+    }
+
+button.swiper-pagination-bullet {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+    cursor: pointer
+}
+
+.swiper-pagination-white .swiper-pagination-bullet {
+    background: # fff
+}
+
+.swiper - pagination - bullet - active {
+    opacity: 1;
+    background: #007aff
+}
+
+.swiper-pagination-white .swiper-pagination-bullet-active {
+    background: # fff
+}
+
+.swiper - pagination - black.swiper - pagination - bullet - active {
+    background: #000
+}
+
+.swiper-container-vertical > .swiper-pagination-bullets {
+    right: 10px;
+    top: 50%;
+    -webkit-transform: translate3d(0,-50%,0);
+    -moz-transform: translate3d(0,-50%,0);
+    -o-transform: translate(0,-50%);
+    -ms-transform: translate3d(0,-50%,0);
+    transform: translate3d(0,-50%,0)
+}
+
+    .swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 5px 0;
+        display: block
+    }
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 5px
+}
+
+.swiper-pagination-progress {
+    background: rgba(0,0,0,.25);
+    position: absolute
+}
+
+    .swiper-pagination-progress .swiper-pagination-progressbar {
+        background: # 007 aff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100 %;
+        height: 100 %;
+        - webkit - transform: scale(0);
+        - ms - transform: scale(0);
+        - o - transform: scale(0);
+        transform: scale(0);
+        - webkit - transform - origin: left top;
+        - moz - transform - origin: left top;
+        - ms - transform - origin: left top;
+        - o - transform - origin: left top;
+        transform - origin: left top
+    }
+
+.swiper - container - rtl.swiper - pagination - progress.swiper - pagination - progressbar {
+    -webkit - transform - origin: right top;
+    - moz - transform - origin: right top;
+    - ms - transform - origin: right top;
+    - o - transform - origin: right top;
+    transform - origin: right top
+}
+
+.swiper - container - horizontal > .swiper - pagination - progress {
+    width: 100 %;
+    height: 4 px;
+    left: 0;
+    top: 0
+}
+
+.swiper - container - vertical > .swiper - pagination - progress {
+    width: 4 px;
+    height: 100 %;
+    left: 0;
+    top: 0
+}
+
+.swiper - pagination - progress.swiper - pagination - white {
+    background: rgba(255, 255, 255, .5)
+}
+
+    .swiper - pagination - progress.swiper - pagination - white.swiper - pagination - progressbar {
+        background: #fff
+    }
+
+.swiper - pagination - progress.swiper - pagination - black.swiper - pagination - progressbar {
+    background: #000
+}
+
+.swiper-container-3d {
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -o-perspective: 1200px;
+    perspective: 1200px
+}
+
+    .swiper-container-3d .swiper-cube-shadow, .swiper-container-3d .swiper-slide, .swiper-container-3d .swiper-slide-shadow-bottom, .swiper-container-3d .swiper-slide-shadow-left, .swiper-container-3d .swiper-slide-shadow-right, .swiper-container-3d .swiper-slide-shadow-top, .swiper-container-3d .swiper-wrapper {
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d
+    }
+
+    .swiper-container-3d .swiper-slide-shadow-bottom, .swiper-container-3d .swiper-slide-shadow-left, .swiper-container-3d .swiper-slide-shadow-right, .swiper-container-3d .swiper-slide-shadow-top {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10
+    }
+
+    .swiper-container-3d .swiper-slide-shadow-left {
+        background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));
+        background-image: -webkit-linear-gradient(right,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: -moz-linear-gradient(right,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: -o-linear-gradient(right,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: linear-gradient(to left,rgba(0,0,0,.5),rgba(0,0,0,0))
+    }
+
+    .swiper-container-3d .swiper-slide-shadow-right {
+        background-image: -webkit-gradient(linear,right top,left top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));
+        background-image: -webkit-linear-gradient(left,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: -moz-linear-gradient(left,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: -o-linear-gradient(left,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: linear-gradient(to right,rgba(0,0,0,.5),rgba(0,0,0,0))
+    }
+
+    .swiper-container-3d .swiper-slide-shadow-top {
+        background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));
+        background-image: -webkit-linear-gradient(bottom,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: -moz-linear-gradient(bottom,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: -o-linear-gradient(bottom,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,0))
+    }
+
+    .swiper-container-3d .swiper-slide-shadow-bottom {
+        background-image: -webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));
+        background-image: -webkit-linear-gradient(top,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: -moz-linear-gradient(top,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: -o-linear-gradient(top,rgba(0,0,0,.5),rgba(0,0,0,0));
+        background-image: linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,0))
+    }
+
+.swiper-container-coverflow .swiper-wrapper, .swiper-container-flip .swiper-wrapper {
+    -ms-perspective: 1200px
+}
+
+.swiper-container-cube, .swiper-container-flip {
+    overflow: visible
+}
+
+    .swiper-container-cube .swiper-slide, .swiper-container-flip .swiper-slide {
+        pointer-events: none;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        z-index: 1
+    }
+
+        .swiper-container-cube .swiper-slide .swiper-slide, .swiper-container-flip .swiper-slide .swiper-slide {
+            pointer-events: none
+        }
+
+    .swiper-container-cube .swiper-slide-active, .swiper-container-cube .swiper-slide-active .swiper-slide-active, .swiper-container-flip .swiper-slide-active, .swiper-container-flip .swiper-slide-active .swiper-slide-active {
+        pointer-events: auto
+    }
+
+    .swiper-container-cube .swiper-slide-shadow-bottom, .swiper-container-cube .swiper-slide-shadow-left, .swiper-container-cube .swiper-slide-shadow-right, .swiper-container-cube .swiper-slide-shadow-top, .swiper-container-flip .swiper-slide-shadow-bottom, .swiper-container-flip .swiper-slide-shadow-left, .swiper-container-flip .swiper-slide-shadow-right, .swiper-container-flip .swiper-slide-shadow-top {
+        z-index: 0;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden
+    }
+
+    .swiper-container-cube .swiper-slide {
+        visibility: hidden;
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+        width: 100%;
+        height: 100%
+    }
+
+    .swiper-container-cube.swiper-container-rtl .swiper-slide {
+        -webkit-transform-origin: 100% 0;
+        -moz-transform-origin: 100% 0;
+        -ms-transform-origin: 100% 0;
+        transform-origin: 100% 0
+    }
+
+    .swiper-container-cube .swiper-slide-active, .swiper-container-cube .swiper-slide-next, .swiper-container-cube .swiper-slide-next + .swiper-slide, .swiper-container-cube .swiper-slide-prev {
+        pointer-events: auto;
+        visibility: visible
+    }
+
+    .swiper-container-cube .swiper-cube-shadow {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: # 000;
+        opacity: .6;
+        - webkit - filter: blur(50 px);
+        filter: blur(50 px);
+        z - index: 0
+    }
+
+.swiper - container - fade.swiper - container - free - mode.swiper - slide {
+    -webkit - transition - timing - function: ease - out;
+    - moz - transition - timing - function: ease - out;
+    - ms - transition - timing - function: ease - out;
+    - o - transition - timing - function: ease - out;
+    transition - timing - function: ease - out
+}
+
+.swiper - container - fade.swiper - slide {
+    pointer - events: none;
+    - webkit - transition - property: opacity;
+    - moz - transition - property: opacity;
+    - o - transition - property: opacity;
+    transition - property: opacity
+}
+
+    .swiper - container - fade.swiper - slide.swiper - slide {
+        pointer - events: none
+    }
+
+    .swiper - container - fade.swiper - slide - active,
+    .swiper - container - fade.swiper - slide - active.swiper - slide - active {
+        pointer - events: auto
+    }
+
+.swiper - scrollbar {
+    border - radius: 10 px;
+    position: relative;
+    - ms - touch - action: none;
+    background: rgba(0, 0, 0, .1)
+}
+
+.swiper - container - horizontal > .swiper - scrollbar {
+    position: absolute;
+    left: 1 %;
+    bottom: 3 px;
+    z - index: 50;
+    height: 5 px;
+    width: 98 %
+}
+
+.swiper - container - vertical > .swiper - scrollbar {
+    position: absolute;
+    right: 3 px;
+    top: 1 %;
+    z - index: 50;
+    width: 5 px;
+    height: 98 %
+}
+
+.swiper - scrollbar - drag {
+    height: 100 %;
+    width: 100 %;
+    position: relative;
+    background: rgba(0, 0, 0, .5);
+    border - radius: 10 px;
+    left: 0;
+    top: 0
+}
+
+.swiper - scrollbar - cursor - drag {
+    cursor: move
+}
+
+.swiper - lazy - preloader {
+    width: 42 px;
+    height: 42 px;
+    position: absolute;
+    left: 50 %;
+    top: 50 %;
+    margin - left: -21 px;
+    margin - top: -21 px;
+    z - index: 10;
+    - webkit - transform - origin: 50 %;
+    - moz - transform - origin: 50 %;
+    transform - origin: 50 %;
+    - webkit - animation: swiper - preloader - spin 1 s steps(12, end) infinite;
+    - moz - animation: swiper - preloader - spin 1 s steps(12, end) infinite;
+    animation: swiper - preloader - spin 1 s steps(12, end) infinite
+}
+
+    .swiper - lazy - preloader: after {
+        display: block;
+        content: "";
+        width: 100 %;
+        height: 100 %;
+        background - image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%20120%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%3E%3Cdefs%3E%3Cline%20id%3D'l'%20x1%3D'60'%20x2%3D'60'%20y1%3D'7'%20y2%3D'27'%20stroke%3D'%236c6c6c'%20stroke-width%3D'11'%20stroke-linecap%3D'round'%2F%3E%3C%2Fdefs%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(30%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(60%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(90%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(120%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(150%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.37'%20transform%3D'rotate(180%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.46'%20transform%3D'rotate(210%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.56'%20transform%3D'rotate(240%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.66'%20transform%3D'rotate(270%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.75'%20transform%3D'rotate(300%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.85'%20transform%3D'rotate(330%2060%2C60)'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+        background - position: 50 %;
+        - webkit - background - size: 100 %;
+        background - size: 100 %;
+        background - repeat: no - repeat
+    }
+
+    .swiper - lazy - preloader - white: after {
+        background - image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%20120%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%3E%3Cdefs%3E%3Cline%20id%3D'l'%20x1%3D'60'%20x2%3D'60'%20y1%3D'7'%20y2%3D'27'%20stroke%3D'%23fff'%20stroke-width%3D'11'%20stroke-linecap%3D'round'%2F%3E%3C%2Fdefs%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(30%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(60%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(90%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(120%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(150%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.37'%20transform%3D'rotate(180%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.46'%20transform%3D'rotate(210%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.56'%20transform%3D'rotate(240%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.66'%20transform%3D'rotate(270%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.75'%20transform%3D'rotate(300%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.85'%20transform%3D'rotate(330%2060%2C60)'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")
+    }
+
+@ - webkit - keyframes swiper - preloader - spin {
+    100 % {
+        -webkit - transform: rotate(360 deg)
+    }
+}
+
+@ keyframes swiper - preloader - spin {
+    100 % {
+        transform: rotate(360 deg)
+    }
+}
