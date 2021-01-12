@@ -21,21 +21,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             return View(db.LoaiBDS.ToList());
         }
 
-        // GET: Admin/LoaiBDS/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            LoaiBDS loaiBDS = db.LoaiBDS.Find(id);
-            if (loaiBDS == null)
-            {
-                return HttpNotFound();
-            }
-            return View(loaiBDS);
-        }
-
         // GET: Admin/LoaiBDS/Create
         public ActionResult Create()
         {
@@ -74,9 +59,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             return View(loaiBDS);
         }
 
-        // POST: Admin/LoaiBDS/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaLoai,TenLoai")] LoaiBDS loaiBDS)
@@ -90,7 +72,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             return View(loaiBDS);
         }
 
-        // GET: Admin/LoaiBDS/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -102,15 +83,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(loaiBDS);
-        }
-
-        // POST: Admin/LoaiBDS/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            LoaiBDS loaiBDS = db.LoaiBDS.Find(id);
             db.LoaiBDS.Remove(loaiBDS);
             db.SaveChanges();
             return RedirectToAction("Index");

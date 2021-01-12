@@ -19,22 +19,22 @@
         [Display(Name = "Mã người dùng")]
         public int MaUser { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Họ tên không được trống")]
         [Display(Name = "Họ và tên người dùng")]
         [StringLength(50)]
         public string HoTen { get; set; }
 
-        [Required]
-        [StringLength(200)]
+        [Required(ErrorMessage = "Địa chỉ không được trống")]
+        [StringLength(200, ErrorMessage = "Địa chỉ không được dài quá 200 ký tự")]
         [Display(Name = "Địa chỉ")]
         public string DiaChi { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Số điện thoại không được để trống")]
         [StringLength(10)]
         [Display(Name = "Số điện thoại"), DataType(DataType.PhoneNumber)]
         public string SDT { get; set; }
         
-        [Display(Name = "Năm sinh")]
+        [Display(Name = "Năm sinh"), Required(ErrorMessage = "Năm sinh không được để trống")]
         [Range(1900, 9999, ErrorMessage = "Năm sinh phải lớn hơn 1900")]
         public int NamSinh { get; set; }
 

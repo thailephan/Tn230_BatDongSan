@@ -15,8 +15,8 @@
             ThongTinBDS = new HashSet<ThongTinBDS>();
         }
 
-        [Display(Name = "Mã khu dân cư")]
         [Key]
+        [Display(Name = "Mã khu dân cư")]
         public int MaKhuDanCu { get; set; }
 
         [Required]

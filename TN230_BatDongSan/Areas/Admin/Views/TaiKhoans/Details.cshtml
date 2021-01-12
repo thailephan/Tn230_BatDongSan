@@ -9,13 +9,103 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Password)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Password)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTins.FirstOrDefault().HoTen)
+        </dt>
 
+        <dd>
+            @if (
+                @Html.DisplayFor(model => model.ThongTins.FirstOrDefault().HoTen).ToString().Length == 0
+            )
+            {
+                <p>Trống</p>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.ThongTins.FirstOrDefault().HoTen)
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTins.FirstOrDefault().DiaChi)
+        </dt>
+
+        <dd>
+            @if (
+                @Html.DisplayFor(model => model.ThongTins.FirstOrDefault().DiaChi).ToString().Length == 0
+            )
+            {
+                <p>Trống</p>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.ThongTins.FirstOrDefault().DiaChi)
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTins.FirstOrDefault().SDT)
+        </dt>
+
+        <dd>
+            @if (
+            @Html.DisplayFor(model => model.ThongTins.FirstOrDefault().SDT).ToString().Length == 0
+            )
+            {
+                <p>Trống</p>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.ThongTins.FirstOrDefault().SDT)
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTins.FirstOrDefault().NamSinh)
+        </dt>
+
+        <dd>
+            @if (
+                @Html.DisplayFor(model => model.ThongTins.FirstOrDefault().NamSinh).ToString().Length == 0
+            )
+            {
+                <p>Trống</p>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.ThongTins.FirstOrDefault().NamSinh)
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTins.FirstOrDefault().GioiTinh)
+        </dt>
+
+        <dd>
+            @if (
+                @Html.DisplayFor(model => model.ThongTins.FirstOrDefault().GioiTinh).ToString().Length == 0
+            )
+            {
+                <p>Trống</p>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.ThongTins.FirstOrDefault().GioiTinh)
+            }
+        </dd>
     </dl>
 </div>
 <p>

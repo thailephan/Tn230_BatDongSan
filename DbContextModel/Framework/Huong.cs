@@ -19,7 +19,7 @@
         [Display(Name = "Mã hướng")]
         public int MaHuong { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Tên hướng không được trống")]
         [Display(Name = "Tên hướng")]
         [StringLength(50)]
         public string TenHuong { get; set; }

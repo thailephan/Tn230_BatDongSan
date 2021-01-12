@@ -24,7 +24,7 @@
         public string TieuDe { get; set; }
 
         [Display(Name = "Ngày tạo")]
-        [Range(1970, 9999, ErrorMessage = "Ngày tạo phải > 1970 và < 9999")]
+        [DataType(DataType.DateTime)]
         public DateTime NgayTao { get; set; }
 
         [Display(Name = "Chiều dài")]

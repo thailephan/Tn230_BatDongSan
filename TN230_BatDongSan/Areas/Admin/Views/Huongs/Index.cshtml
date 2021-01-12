@@ -4,21 +4,22 @@
     ViewBag.Title = "Danh sách - Hướng";
 }
 
+<h3>Hướng bất động sản</h3>
 <p>
     @Html.ActionLink("Thêm hướng mới", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>STT</th>
+        <th>
+            STT
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.TenHuong)
         </th>
         <th></th>
     </tr>
 
-    @{
-        var i = 1;
-    }
+    @{ var i = 1;}
     @foreach (var item in Model)
     {
         <tr>
@@ -31,7 +32,6 @@
             </td>
             <td>
                 @Html.ActionLink("Sửa", "Edit", new { id = item.MaHuong }) |
-                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaHuong }) |
                 @Html.ActionLink("Xóa", "Delete", new { id = item.MaHuong })
             </td>
         </tr>

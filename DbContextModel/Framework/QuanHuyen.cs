@@ -19,7 +19,7 @@
         [Display(Name = "Mã quận huyện")]
         public int MaQuanHuyen { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Tên quận huyện không được trống")]
         [StringLength(100)]
         [Display(Name = "Tên quận huyện")]
         public string TenQuanHuyen { get; set; }

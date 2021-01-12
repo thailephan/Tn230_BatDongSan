@@ -19,7 +19,7 @@
         [Key]
         public int MaLoai { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Tên loại không được trống")]
         [StringLength(200)]
         [Display(Name = "Tên loại")]
         public string TenLoai { get; set; }

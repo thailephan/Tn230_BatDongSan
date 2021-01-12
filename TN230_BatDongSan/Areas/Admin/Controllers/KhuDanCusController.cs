@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using DbContextModel.Framework;
 
@@ -15,28 +11,10 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
     {
         private DbContextWeb db = new DbContextWeb();
 
-        // GET: Admin/KhuDanCus
         public ActionResult Index()
         {
             return View(db.KhuDanCus.ToList());
         }
-
-        // GET: Admin/KhuDanCus/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            KhuDanCu khuDanCu = db.KhuDanCus.Find(id);
-            if (khuDanCu == null)
-            {
-                return HttpNotFound();
-            }
-            return View(khuDanCu);
-        }
-
-        // GET: Admin/KhuDanCus/Create
         public ActionResult Create()
         {
             return View();
@@ -102,20 +80,12 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(khuDanCu);
-        }
-
-        // POST: Admin/KhuDanCus/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            KhuDanCu khuDanCu = db.KhuDanCus.Find(id);
             db.KhuDanCus.Remove(khuDanCu);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
+        // POST: Admin/KhuDanCus/Delete/5
         protected override void Dispose(bool disposing)
         {
             if (disposing)

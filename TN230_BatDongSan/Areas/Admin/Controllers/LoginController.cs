@@ -75,7 +75,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                     {
                         // Initialization.    
                         var logindetails = loginInfo.First();
-                        // Login In.    
+                        // Login In.
                         this.SignInUser(logindetails.UserName, false);
                         // Info.    
                         return this.RedirectToLocal(returnUrl);

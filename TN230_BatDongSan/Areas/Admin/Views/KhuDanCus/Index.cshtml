@@ -4,6 +4,7 @@
     ViewBag.Title = "Index";
 }
 
+<h3>Khu dân cư</h3>
 <p>
     @Html.ActionLink("Thêm khu dân cư mới", "Create")
 </p>
@@ -17,12 +18,12 @@
         </th>
         <th></th>
     </tr>
-    @{
-        var i = 1;
-    }
+
+    @{ var i = 1;}
     @foreach (var item in Model)
     {
         <tr>
+
             <td>
                 @i
                 @{ i++; }
@@ -32,7 +33,6 @@
             </td>
             <td>
                 @Html.ActionLink("Sửa", "Edit", new { id = item.MaKhuDanCu }) |
-                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaKhuDanCu }) |
                 @Html.ActionLink("Xóa", "Delete", new { id = item.MaKhuDanCu })
             </td>
         </tr>

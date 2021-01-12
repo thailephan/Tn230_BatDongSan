@@ -4,6 +4,7 @@
     ViewBag.Title = "Danh sách tài khoản";
 }
 
+<h3>Trang tài khoản</h3>
 <p>
     @Html.ActionLink("Thêm tài khoản", "Create")
 </p>
@@ -16,6 +17,13 @@
         <th>
             @Html.DisplayNameFor(model => model.Password)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThongTins.FirstOrDefault().HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThongTins.FirstOrDefault().SDT)
+        </th>
+
         <th></th>
     </tr>
     @{
@@ -33,6 +41,13 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Password)
+    </td>
+
+    <td>
+        @Html.DisplayFor(model => item.ThongTins.FirstOrDefault().HoTen)
+    </td>
+    <td>
+        @Html.DisplayFor(model => item.ThongTins.FirstOrDefault().SDT)
     </td>
     <td>
         @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.UserName }) |

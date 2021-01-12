@@ -21,21 +21,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             return View(db.Huongs.ToList());
         }
 
-        // GET: Admin/Huongs/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Huong huong = db.Huongs.Find(id);
-            if (huong == null)
-            {
-                return HttpNotFound();
-            }
-            return View(huong);
-        }
-
+        
         // GET: Admin/Huongs/Create
         public ActionResult Create()
         {
@@ -102,18 +88,9 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(huong);
-        }
-
-        // POST: Admin/Huongs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Huong huong = db.Huongs.Find(id);
             db.Huongs.Remove(huong);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return View("Index", db.Huongs.Select( h => h));
         }
 
         protected override void Dispose(bool disposing)

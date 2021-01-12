@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-@using (Html.BeginForm("Create", "ThongTinBDS", FormMethod.Post, new { @enctype = "multipart/form-data" })) 
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
@@ -20,27 +20,26 @@
             </div>
         </div>
 
-        <div class="form-group d-flex flex-row">
-            <div>
-                @Html.LabelFor(model => model.ChieuDai, htmlAttributes: new { @class = "control-label col-md-10" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ChieuDai, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ChieuDai, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChieuDai, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ChieuDai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ChieuDai, "", new { @class = "text-danger" })
             </div>
-            <div>
-                @Html.LabelFor(model => model.ChieuRong, htmlAttributes: new { @class = "control-label col-md-10" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ChieuRong, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ChieuRong, "", new { @class = "text-danger" })
-                </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChieuRong, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ChieuRong, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ChieuRong, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.MoTa, 10, 20, new { @class = "form-control ckeditor" })
+                @Html.TextAreaFor(model => model.MoTa, 6, 20, new { @class = "form-control ckeditor" })
                 @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,14 +65,6 @@
             <div class="col-md-10">
                 @Html.DropDownList("MaHuong", null, "Chọn hướng", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaHuong, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ThongTin.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("MaUser", null, "Chọn người dùng", htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MaUser, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -104,8 +95,8 @@
         <div class="form-group">
             <label>Hình ảnh cung cấp</label>
             <div class="custom-file col-md-10 mx-3">
-                <input type="file" class="files" id="files" name="files" multiple>
-                <label class="custom-file-label" for="files">Chọn hình ảnh upload</label>
+                <input type="file" class="custom-file-input" id="customFile" multiple>
+                <label class="custom-file-label" for="customFile">Choose file</label>
             </div>
         </div>
 
@@ -126,7 +117,7 @@
     <script>
         $("#btn-create").attr("disabled", true)
 
-        $(".files").on("change", function () {
+        $(".custom-file-input").on("change", function () {
             console.log($(this)[0].files);
             if ($(this)[0].files.length >= 3) {
                 $("#btn-create").removeAttr("disabled")

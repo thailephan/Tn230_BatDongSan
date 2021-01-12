@@ -1,11 +1,8 @@
 ﻿namespace DbContextModel.Framework
 {
-    using Microsoft.AspNet.Identity.EntityFramework;
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("TaiKhoan")]
     public partial class TaiKhoan
@@ -17,12 +14,14 @@
         }
 
         [Key]
+        [Required(ErrorMessage = "Tài khoản không được trống")]
         [StringLength(20)]
         [Display(Name = "Tên tài khoản")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Mật khẩu không được trống")]
         [StringLength(20)]
+        [DataType(DataType.Password)]
         [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 

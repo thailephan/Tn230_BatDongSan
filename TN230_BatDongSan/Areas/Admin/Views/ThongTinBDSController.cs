@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DbContextModel.Framework;
 
-namespace TN230_BatDongSan.Areas.Admin.Controllers
+namespace TN230_BatDongSan.Areas.Admin.Views
 {
-    [Authorize]
     public class ThongTinBDSController : Controller
     {
         private DbContextWeb db = new DbContextWeb();
@@ -51,48 +50,14 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // POST: Admin/ThongTinBDS/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost, ValidateInput(false)]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(
-            [Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS,
-            HttpPostedFileBase[] files
-            )
+        public ActionResult Create([Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS)
         {
             if (ModelState.IsValid)
             {
-                thongTinBDS.NgayTao = DateTime.Now;
-                /*thongTinBDS.MaUser = 1;*/
-                try
-                {
-                    db.ThongTinBDS.Add(thongTinBDS);
-                    List<Anh> linkAnhs = new List<Anh>();
-
-                    foreach (HttpPostedFileBase file in files)
-                    {
-                        //Checking file is available to save.  
-                        if (file != null)
-                        {
-                            var InputFileName = Guid.NewGuid().ToString().Replace("\\", "") + DateTime.Now.ToString("dd_mm_yyyy") + Path.GetExtension(file.FileName);
-                            var ServerSavePath = Path.Combine(Server.MapPath("~/Content/Image") + InputFileName);
-                            file.SaveAs(ServerSavePath);
-                            Anh anh = new Anh()
-                            {
-                                MaTin = 1,
-                                DuongDan = ServerSavePath
-                            };
-
-                            linkAnhs.Add(anh);
-                        }
-                    }
-                    db.Anhs.AddRange(linkAnhs);
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
+                db.ThongTinBDS.Add(thongTinBDS);
                 db.SaveChanges();
-                ViewBag.files = files.Length;
                 return RedirectToAction("Index");
             }
 
@@ -102,11 +67,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             ViewBag.MaQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen", thongTinBDS.MaQuanHuyen);
             ViewBag.MaUser = new SelectList(db.ThongTins, "MaUser", "HoTen", thongTinBDS.MaUser);
             return View(thongTinBDS);
-        }
-
-        private string GetExtension(string fileName)
-        {
-            throw new NotImplementedException();
         }
 
         // GET: Admin/ThongTinBDS/Edit/5
@@ -132,7 +92,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // POST: Admin/ThongTinBDS/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost, ValidateInput(false)]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS)
         {

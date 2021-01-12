@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using DbContextModel.Framework;
 
@@ -18,7 +16,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // GET: Admin/TaiKhoans
         public ActionResult Index()
         {
-            return View(db.TaiKhoans.ToList());
+            return View(db.TaiKhoans.Include(tk => tk.ThongTins));
         }
 
         // GET: Admin/TaiKhoans/Details/5
@@ -29,6 +27,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             TaiKhoan taiKhoan = db.TaiKhoans.Find(id);
+            taiKhoan.ThongTins = db.ThongTins.Where(tt => tt.UserName.Equals(id)).ToList();
             if (taiKhoan == null)
             {
                 return HttpNotFound();
@@ -47,11 +46,23 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserName,Password")] TaiKhoan taiKhoan)
+        public ActionResult Create(
+            [Bind(Include = "UserName,Password")] TaiKhoan taiKhoan, 
+            [Bind(Include = "MaUser,HoTen,DiaChi,SDT,NamSinh,GioiTinh,UserName")] ThongTin thongTin
+            )
         {
             if (ModelState.IsValid)
             {
-                db.TaiKhoans.Add(taiKhoan);
+                try
+                {
+                    db.TaiKhoans.Add(taiKhoan);
+                    db.ThongTins.Add(thongTin);
+                }
+                catch (Exception)
+                {
+                    ModelState.AddModelError("Save To DB", "Máy chủ gặp sự cố khi sao thêm, vui lòng kiểm tra lại thông tin đã nhập");
+                    return View();
+                }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -67,6 +78,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             TaiKhoan taiKhoan = db.TaiKhoans.Find(id);
+            taiKhoan.ThongTins = db.ThongTins.Where(tt => tt.UserName.Equals(id)).ToList();
             if (taiKhoan == null)
             {
                 return HttpNotFound();
@@ -79,11 +91,15 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserName,Password")] TaiKhoan taiKhoan)
+        public ActionResult Edit(
+            [Bind(Include = "UserName,Password")] TaiKhoan taiKhoan,
+            [Bind(Include = "MaUser,HoTen,DiaChi,SDT,NamSinh,GioiTinh,UserName")] ThongTin thongTin
+            )
         {
             if (ModelState.IsValid)
             {
                 db.Entry(taiKhoan).State = EntityState.Modified;
+                db.Entry(thongTin).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -98,6 +114,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             TaiKhoan taiKhoan = db.TaiKhoans.Find(id);
+            taiKhoan.ThongTins = db.ThongTins.Where(tt => tt.UserName.Equals(id)).ToList();
             if (taiKhoan == null)
             {
                 return HttpNotFound();
@@ -111,6 +128,8 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             TaiKhoan taiKhoan = db.TaiKhoans.Find(id);
+            ThongTin thongTin = db.ThongTins.Where(tt => tt.UserName.Equals(id)).FirstOrDefault();
+            db.ThongTins.Remove(thongTin);
             db.TaiKhoans.Remove(taiKhoan);
             db.SaveChanges();
             return RedirectToAction("Index");
