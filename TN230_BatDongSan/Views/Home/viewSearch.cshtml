@@ -1,0 +1,24 @@
+﻿@model IEnumerable<DbContextModel.Framework.ThongTinBDS>
+
+@{
+    ViewBag.Title = "viewSearch";
+}
+
+@foreach (var item in Model)
+  {
+
+
+        <div class="bg-dark text-white m-3">
+            <img style="width:200px; " alt="Chính chủ cần bán gấp nhà 4 tầng tại Nam Từ Liêm, diện tích 47m2, giá 4,85 tỷ" src="https://file4.batdongsan.com.vn/crop/350x232/2020/12/10/YOQqf9mk/20201210115130-bdc6_wm.jpg">
+
+            @Html.DisplayFor(modelItem => item.TieuDe)
+            @Html.DisplayFor(modelItem => item.ChieuDai)
+            @Html.DisplayFor(modelItem => item.ChieuRong)
+            @Html.DisplayFor(modelItem => item.SDTChuBan)
+            @Html.DisplayFor(modelItem => item.Gia)
+            @Html.DisplayFor(modelItem => item.MoTa)
+
+        </div>
+
+  }
+

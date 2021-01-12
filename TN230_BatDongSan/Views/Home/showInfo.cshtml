@@ -1,0 +1,92 @@
+﻿@model IEnumerable<DbContextModel.Framework.ThongTinBDS>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Huong.TenHuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KhuDanCu.TenKhuDanCu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiBD.TenLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuanHuyen.TenQuanHuyen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThongTin.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayTao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChieuDai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChieuRong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDTChuBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Huong.TenHuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhuDanCu.TenKhuDanCu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiBD.TenLoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuanHuyen.TenQuanHuyen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThongTin.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TieuDe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayTao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChieuDai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChieuRong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDTChuBan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaTin }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaTin }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaTin })
+            </td>
+        </tr>
+    }
+
+</table>
+

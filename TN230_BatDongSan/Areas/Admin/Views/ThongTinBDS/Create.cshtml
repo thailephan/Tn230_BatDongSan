@@ -128,7 +128,7 @@
 
         $(".files").on("change", function () {
             console.log($(this)[0].files);
-            if ($(this)[0].files.length >= 3) {
+            if ($(this)[0].files.length >= 1) {
                 $("#btn-create").removeAttr("disabled")
             } else {
                 $("#btn-create").attr("disabled", true)
