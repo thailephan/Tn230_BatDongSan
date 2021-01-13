@@ -46,7 +46,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu");
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai");
             ViewBag.MaQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen");
-            ViewBag.MaUser = new SelectList(db.ThongTinsBDS, "MaUser", "HoTen");
+            ViewBag.MaUser = new SelectList(db.ThongTins, "MaUser", "HoTen");
             return View(thongTinBDS);
         }
 
@@ -102,7 +102,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu", thongTinBDS.MaKhuDanCu);
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai", thongTinBDS.MaLoai);
             ViewBag.MaQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen", thongTinBDS.MaQuanHuyen);
-            ViewBag.MaUser = new SelectList(db.ThongTinsBDS, "MaUser", "HoTen", thongTinBDS.MaUser);
+            ViewBag.MaUser = new SelectList(db.ThongTins, "MaUser", "HoTen", thongTinBDS.MaUser);
             return View(thongTinBDS);
         }
 
@@ -127,7 +127,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu", thongTinBDS.MaKhuDanCu);
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai", thongTinBDS.MaLoai);
             ViewBag.MaQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen", thongTinBDS.MaQuanHuyen);
-            ViewBag.MaUser = new SelectList(db.ThongTinsBDS, "MaUser", "HoTen", thongTinBDS.MaUser);
+            ViewBag.MaUser = new SelectList(db.ThongTins, "MaUser", "HoTen", thongTinBDS.MaUser);
             return View(thongTinBDS);
         }
 
@@ -148,7 +148,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu", thongTinBDS.MaKhuDanCu);
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai", thongTinBDS.MaLoai);
             ViewBag.MaQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen", thongTinBDS.MaQuanHuyen);
-            ViewBag.MaUser = new SelectList(db.ThongTinsBDS, "MaUser", "HoTen", thongTinBDS.MaUser);
+            ViewBag.MaUser = new SelectList(db.ThongTins, "MaUser", "HoTen", thongTinBDS.MaUser);
             return View(thongTinBDS);
         }
 

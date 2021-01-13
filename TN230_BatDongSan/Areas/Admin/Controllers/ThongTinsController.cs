@@ -18,7 +18,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // GET: Admin/ThongTins
         public ActionResult Index()
         {
-            var thongTins = db.ThongTinsBDS.Include(t => t.TaiKhoan);
+            var thongTins = db.ThongTins.Include(t => t.TaiKhoan);
             return View(thongTins.ToList());
         }
 
@@ -29,7 +29,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ThongTin thongTin = db.ThongTinsBDS.Find(id);
+            ThongTin thongTin = db.ThongTins.Find(id);
             if (thongTin == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.ThongTinsBDS.Add(thongTin);
+                db.ThongTins.Add(thongTin);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -69,7 +69,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ThongTin thongTin = db.ThongTinsBDS.Find(id);
+            ThongTin thongTin = db.ThongTins.Find(id);
             if (thongTin == null)
             {
                 return HttpNotFound();
@@ -102,7 +102,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ThongTin thongTin = db.ThongTinsBDS.Find(id);
+            ThongTin thongTin = db.ThongTins.Find(id);
             if (thongTin == null)
             {
                 return HttpNotFound();
@@ -115,8 +115,8 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ThongTin thongTin = db.ThongTinsBDS.Find(id);
-            db.ThongTinsBDS.Remove(thongTin);
+            ThongTin thongTin = db.ThongTins.Find(id);
+            db.ThongTins.Remove(thongTin);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
