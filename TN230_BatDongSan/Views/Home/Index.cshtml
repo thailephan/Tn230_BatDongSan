@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -58,7 +59,6 @@
 
     </script>
 }
-
 <ul class='dropdown-navigative-menu'>
     <li class="lv0 tablet">
         <a href="/tin-da-luu"> <span class="icon">
@@ -431,20 +431,20 @@
 <div class="form-group">
     @using (Html.BeginForm("viewSearch", "Home"))
     {
-        @Html.DropDownList("MaKhuDanCu", (SelectList)ViewBag.ListKhuDanCu, "Hiển thị tất cả khu dân cư", htmlAttributes: new { @class = "", @onchange = "changeKhuDanCu(this);" })
-        @Html.DropDownList("MaLoai", (SelectList)ViewBag.ListLoaiBDS, "Hiển thị tất cả loại", htmlAttributes: new { @class = "", @onchange = "changeLoai(this);" })
-        @Html.DropDownList("MaHuong", (SelectList)ViewBag.ListHuong, "Hiển thị tất cả hướng", htmlAttributes: new { @class = "", @onchange = "changeHuong(this);" })
-        @Html.DropDownList("MaQuanHuyen", (SelectList)ViewBag.ListQuanHuyen, "Hiển thị tất quận huyện", htmlAttributes: new { @class = "", @onchange = "changeQuanHuyen(this);" })
+        @Html.DropDownList("MaHuong", (SelectList)ViewBag.ListHuong, "Hiển thị hướng", htmlAttributes: new { @class = "", @onchange = "changeHuong(this);" })
+        @Html.DropDownList("MaKhuDanCu", (SelectList)ViewBag.ListKhuDanCu, "Hiển thị khu dân cư", htmlAttributes: new { @class = "", @onchange = "changeKhuDanCu(this);" })
+        @Html.DropDownList("MaLoai", (SelectList)ViewBag.ListLoaiBDS, "Hiển thị loại", htmlAttributes: new { @class = "", @onchange = "changeLoai(this);" })
+        @Html.DropDownList("MaQuanHuyen", (SelectList)ViewBag.ListQuanHuyen, "Hiển thị quận huyện", htmlAttributes: new { @class = "", @onchange = "changeQuanHuyen(this);" })
         <select class="" id="GiaTien" name="GiaTien" onchange="changeGia(this);">
             <option value="">Hiển thị giá</option>
-            <option value="0">0 - 500 triệu</option>
+            <option value="0">Dưới 500 triệu</option>
             <option value="1">500 triệu - 1 tỷ</option>
             <option value="2">1 tỷ - 2 tỷ</option>
             <option value="3">2 tỷ - 3 tỷ</option>
             <option value="4">3 tỷ - 4 tỷ</option>
-            <option value="5">trên 4 tỷ</option>
+            <option value="5">Trên 4 tỷ</option>
         </select>
-        <input type="text" actions="viewSearch" placeholder="Tìm kiếm địa điểm, khu vực" value="" class="search-bar-input ui-autocomplete-input" id="search-suggestion" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+        <input type="text" actions="viewSearch" placeholder="Tìm kiếm theo tiêu đề" name="searchString" value="" class="search-bar-input ui-autocomplete-input" id="search-suggestion" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
         <input type="submit" id="btnSearch" class="btn-blue-7" value="Tìm kiếm">
     }
 </div>

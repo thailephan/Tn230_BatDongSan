@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -19,6 +20,7 @@ namespace TN230_BatDongSan.Controllers
             ViewBag.ListQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen");
 
             return View();
+           //return View();
         }
 
         public ActionResult showInfo(int id_mahuong, int id_khudancu, int id_maloaibds, int id_maquanhuyen, int id_giatien)
@@ -55,10 +57,18 @@ namespace TN230_BatDongSan.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult ViewSearch(int MaHuong = -1, int MaKhuDanCu = -1, int MaLoai = -1, int MaQuanHuyen = -1, int GiaTien = -1)
+        public ActionResult ViewSearch(string searchString, int MaHuong = -1, int MaKhuDanCu = -1, int MaLoai = -1, int MaQuanHuyen = -1, int GiaTien = -1)
         {
-            ViewBag.GGG = MaHuong;
+            ViewBag.ListHuong = new SelectList(db.Huongs, "MaHuong", "TenHuong");
+            ViewBag.ListKhudancu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu");
+            ViewBag.ListLoaiBDS = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai");
+            ViewBag.ListQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen");
+
             var dsbds = db.ThongTinBDS.ToList();
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                dsbds = dsbds.FindAll(s => s.TieuDe.Contains(searchString)); //lọc theo chuỗi tìm kiếm
+            }
             if (MaHuong > -1) dsbds = dsbds.FindAll(n => n.MaHuong == MaHuong);
             if (MaKhuDanCu > -1) dsbds = dsbds.FindAll(n => n.MaKhuDanCu == MaKhuDanCu);
             if (MaLoai > -1) dsbds = dsbds.FindAll(n => n.MaLoai == MaLoai);
@@ -80,6 +90,22 @@ namespace TN230_BatDongSan.Controllers
 
             }
             return View(dsbds);
+        }
+
+       
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            var viewModel = db.ThongTinBDS.SingleOrDefault(s => s.MaTin == id);
+            if (viewModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(viewModel);
         }
     }
 }
