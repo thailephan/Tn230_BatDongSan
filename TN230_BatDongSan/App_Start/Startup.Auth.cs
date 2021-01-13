@@ -19,7 +19,7 @@ namespace TN230_BatDongSan
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Admin/Login/Index"),
                 LogoutPath = new PathString("/Admin/Login/LogOff"),
-                ExpireTimeSpan = TimeSpan.FromMinutes(5.0)
+                ExpireTimeSpan = TimeSpan.FromMinutes(60.0)
             });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
             // Uncomment the following lines to enable logging in with third party login providers   

@@ -20,5 +20,9 @@ namespace TN230_BatDongSan
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.Name;
         }
+        void Session_Start(object sender, EventArgs e)
+        {
+            Session.Timeout = 86400;
+        }
     }
 }

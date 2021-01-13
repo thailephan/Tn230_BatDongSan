@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using TN230_BatDongSan.Areas.Admin.Code.Constant;
 using TN230_BatDongSan.Areas.Admin.Models;
 
 namespace TN230_BatDongSan.Areas.Admin.Controllers
@@ -18,9 +19,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         private DbContextWeb databaseManager = new DbContextWeb();
         #endregion
         #region Default Constructor    
-        /// <summary>  
-        /// Initializes a new instance of the <see cref="AccountController" /> class.    
-        /// </summary>  
+        
         public LoginController()
         {
         }
@@ -49,10 +48,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 // Info    
                 Console.Write(ex);
             }
-            // Info.    
-            this.SignInUser("jhhhhhh", false);
-            // Info.    
-            return this.RedirectToLocal(returnUrl);
+            return View();
         }
         /// <summary>  
         /// POST: /Account/Login    
@@ -77,6 +73,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                     {
                         // Initialization.    
                         var logindetails = loginInfo.First();
+                        Session[SessionData.Session_Username] = model.Username;
                         // Login In.
                         this.SignInUser(logindetails.UserName, false);
                         // Info.    
@@ -84,7 +81,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                     }
                     else
                     {
-                        // Setting.    
                         ModelState.AddModelError(string.Empty, "Tên đăng nhập hoặc mật khẩu không chính xác!!");
                     }
                 }
@@ -94,7 +90,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 // Info    
                 Console.Write(ex);
             }
-            // If we got this far, something failed, redisplay form    
             return this.View(model);
         }
         #endregion
@@ -114,6 +109,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 var ctx = Request.GetOwinContext();
                 var authenticationManager = ctx.Authentication;
                 // Sign Out.    
+                Session.Clear();
                 authenticationManager.SignOut();
             }
             catch (Exception ex)

@@ -4,9 +4,13 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using DbContextModel;
 using DbContextModel.Framework;
+using Microsoft.AspNet.Identity;
+using TN230_BatDongSan.Areas.Admin.Code.Constant;
 
 namespace TN230_BatDongSan.Areas.Admin.Controllers
 {
@@ -16,10 +20,11 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         private DbContextWeb db = new DbContextWeb();
 
         // GET: Admin/ThongTinBDS
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pageSize = 2)
         {
-            var thongTinBDS = db.ThongTinBDS.Include(t => t.Huong).Include(t => t.KhuDanCu).Include(t => t.LoaiBD).Include(t => t.QuanHuyen).Include(t => t.ThongTin);
-            return View(thongTinBDS.ToList());
+            PageListShared listPage = PageListShared.getInstance();
+            var model = listPage.ListAllPageThongTinBDS(page, pageSize);
+            return View(model);
         }
 
         // GET: Admin/ThongTinBDS/Details/5
@@ -30,6 +35,8 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ThongTinBDS thongTinBDS = db.ThongTinBDS.Find(id);
+            thongTinBDS.Anhs = db.Anhs.Where(a => a.MaTin == thongTinBDS.MaTin).ToList();
+
             if (thongTinBDS == null)
             {
                 return HttpNotFound();
@@ -40,13 +47,18 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // GET: Admin/ThongTinBDS/Create
         public ActionResult Create()
         {
-            ThongTinBDS thongTinBDS = new ThongTinBDS();
-            thongTinBDS.NgayTao = DateTime.Now;
+            string username = @User.Identity.GetUserName();
+            ThongTinBDS thongTinBDS = new ThongTinBDS
+            {
+                NgayTao = DateTime.Now,
+                MaUser = db.ThongTins.Where(tt => tt.UserName.Equals(username)).FirstOrDefault().MaUser
+            };
+            ViewBag.UserName = username;
             ViewBag.MaHuong = new SelectList(db.Huongs, "MaHuong", "TenHuong");
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu");
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai");
             ViewBag.MaQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen");
-            ViewBag.MaUser = new SelectList(db.ThongTins, "MaUser", "HoTen");
+            /*ViewBag.MaUser = new SelectList(db.ThongTins, "MaUser", "HoTen");*/
             return View(thongTinBDS);
         }
 
@@ -55,7 +67,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(
+        public async Task<ActionResult> Create(
             [Bind(Include = "MaTin,TieuDe,NgayTao,ChieuDai,ChieuRong,MoTa,SDTChuBan,Gia,MaHuong,MaUser,MaLoai,MaQuanHuyen,MaKhuDanCu")] ThongTinBDS thongTinBDS,
             HttpPostedFileBase[] files
             )
@@ -63,11 +75,9 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 thongTinBDS.NgayTao = DateTime.Now;
-                /*thongTinBDS.MaUser = 1;*/
                 try
                 {
-                    db.ThongTinBDS.Add(thongTinBDS);
-                    List<Anh> linkAnhs = new List<Anh>();
+                    ICollection<Anh> linkAnhs = new List<Anh>();
 
                     foreach (HttpPostedFileBase file in files)
                     {
@@ -75,26 +85,26 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                         if (file != null)
                         {
                             var InputFileName = Guid.NewGuid().ToString().Replace("\\", "") + DateTime.Now.ToString("dd_mm_yyyy") + Path.GetExtension(file.FileName);
-                            var ServerSavePath = Path.Combine(Server.MapPath("~/Content/Image") + InputFileName);
+                            var ServerSavePath = Path.Combine(Server.MapPath("~/Content/Image/") + InputFileName);
                             file.SaveAs(ServerSavePath);
-                            Anh anh = new Anh()
-                            {
-                                MaTin = 1,
-                                DuongDan = ServerSavePath
-                            };
 
-                            linkAnhs.Add(anh);
+                            linkAnhs.Add(new Anh() { 
+                                DuongDan = "/Content/Image/" + InputFileName
+                            });
                         }
                     }
-                    db.Anhs.AddRange(linkAnhs);
+
+                    thongTinBDS.Anhs = linkAnhs;
+                    db.ThongTinBDS.Add(thongTinBDS);
+                    /*db.Anhs.AddRange(linkAnhs);*/
                 }
                 catch (Exception)
                 {
 
                     throw;
                 }
-                db.SaveChanges();
-                ViewBag.files = files.Length;
+
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -106,11 +116,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             return View(thongTinBDS);
         }
 
-        private string GetExtension(string fileName)
-        {
-            throw new NotImplementedException();
-        }
-
         // GET: Admin/ThongTinBDS/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -119,6 +124,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ThongTinBDS thongTinBDS = db.ThongTinBDS.Find(id);
+            thongTinBDS.Anhs = db.Anhs.Where(a => a.MaTin == thongTinBDS.MaTin).ToList();
             if (thongTinBDS == null)
             {
                 return HttpNotFound();
@@ -127,7 +133,6 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             ViewBag.MaKhuDanCu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu", thongTinBDS.MaKhuDanCu);
             ViewBag.MaLoai = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai", thongTinBDS.MaLoai);
             ViewBag.MaQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen", thongTinBDS.MaQuanHuyen);
-            ViewBag.MaUser = new SelectList(db.ThongTins, "MaUser", "HoTen", thongTinBDS.MaUser);
             return View(thongTinBDS);
         }
 
@@ -159,7 +164,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ThongTinBDS thongTinBDS = db.ThongTinBDS.Find(id);
+            ThongTinBDS thongTinBDS = db.ThongTinBDS.Where(tt => tt.MaTin == id).Include(tt => tt.Anhs).FirstOrDefault();
             if (thongTinBDS == null)
             {
                 return HttpNotFound();
@@ -172,7 +177,20 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ThongTinBDS thongTinBDS = db.ThongTinBDS.Find(id);
+            ThongTinBDS thongTinBDS = db.ThongTinBDS.Where(tt => tt.MaTin == id).FirstOrDefault();
+
+            ICollection<Anh> listAnh = db.Anhs.Where(a => a.MaTin == thongTinBDS.MaTin).ToList();
+
+            for (int i = 0; i < listAnh.Count(); i++)
+            {
+                string path = listAnh.ElementAt(i).DuongDan;
+                if (System.IO.File.Exists(path))
+                {
+                    System.IO.File.Delete(path);
+                }
+
+            }
+            db.Anhs.RemoveRange(listAnh);
             db.ThongTinBDS.Remove(thongTinBDS);
             db.SaveChanges();
             return RedirectToAction("Index");
