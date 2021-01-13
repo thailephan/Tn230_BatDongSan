@@ -1,0 +1,141 @@
+﻿@model DbContextModel.Framework.ThongTinBDS
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>THÔNG TIN BẤT ĐỘNG SẢN</h1>
+<p></p>
+
+
+<div>
+    
+    
+    <table class="tableThongTin" ,>
+        <tr>
+            <h2>
+                @Html.DisplayFor(model => model.TieuDe)
+            </h2>
+        </tr>
+
+        <tr>
+            <table class="bangcon">
+                <tr>
+                    <th width="15%">
+                        <p>
+                            @Html.DisplayNameFor(model => model.Gia)
+                        </p>
+                        <dd>
+                            @Html.DisplayFor(model => model.Gia)
+                        </dd>
+                    </th>
+
+                    <th width="15%">
+                        <p>
+                            @Html.DisplayNameFor(model => model.ChieuDai)
+                        </p>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ChieuDai)
+                        </dd>
+
+                    </th>
+
+                    <th width="15%">
+                        <p>
+                            @Html.DisplayNameFor(model => model.ChieuRong)
+                        </p>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ChieuRong)
+                        </dd>
+                    </th>
+                </tr>
+            </table>
+        </tr>
+        <hr />
+        <tr>
+            <h4>Đặc điểm bất động sản</h4>
+            <hr />
+            <table class="dacdiembds">
+                <tr>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LoaiBD.TenLoai)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.LoaiBD.TenLoai)
+                    </dd>
+                </tr>
+                <tr>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.KhuDanCu.TenKhuDanCu)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.KhuDanCu.TenKhuDanCu)
+                    </dd>
+                </tr>
+                <tr>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Huong.TenHuong)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Huong.TenHuong)
+                    </dd>
+                </tr>
+                <tr>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.QuanHuyen.TenQuanHuyen)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.QuanHuyen.TenQuanHuyen)
+                    </dd>
+                </tr>
+            </table>
+
+        </tr>
+        <tr>
+            <h4>Mô Tả</h4>
+            <hr />
+            <dd>
+                @Html.DisplayFor(model => model.MoTa)
+            </dd>
+        </tr>
+        <tr>
+            <h4>Thông tin liên lạc</h4>
+            <table class="thongtinlienlac">
+                <hr />
+                <tr>
+                    <th width="1%">
+                        <p>Người đăng tin</p>
+                        <dd>
+                            @Html.DisplayFor(model => model.ThongTin.HoTen)
+                        </dd>
+                    </th>
+                    <th width="15%">
+                        <p>
+                            @Html.DisplayNameFor(model => model.SDTChuBan)
+                        </p>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.SDTChuBan)
+                        </dd>
+                    </th>
+                </tr>
+            </table>
+        </tr>
+        <tr>
+            <p>Ngày đăng bài</p>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayTao)
+            </dd>
+        </tr>
+
+
+
+    </table>
+</div>
+

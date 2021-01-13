@@ -20,7 +20,7 @@ namespace DbContextModel.Framework
         public virtual DbSet<QuanHuyen> QuanHuyens { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
-        public virtual DbSet<ThongTin> ThongTins { get; set; }
+        public virtual DbSet<ThongTin> ThongTinsBDS { get; set; }
         public virtual DbSet<ThongTinBDS> ThongTinBDS { get; set; }
 
         public List<TaiKhoan> LoginByUsernamePassword (string UserName, string password)
