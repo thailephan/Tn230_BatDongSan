@@ -85,7 +85,7 @@ namespace TN230_BatDongSan.Areas.Admin.Controllers
                         if (file != null)
                         {
                             var InputFileName = Guid.NewGuid().ToString().Replace("\\", "") + DateTime.Now.ToString("dd_mm_yyyy") + Path.GetExtension(file.FileName);
-                            var ServerSavePath = Path.Combine(Server.MapPath("~/Content/Image/") + InputFileName);
+                            var ServerSavePath = Path.Combine(Server.MapPath("/Content/Image/") + InputFileName);
                             file.SaveAs(ServerSavePath);
 
                             linkAnhs.Add(new Anh() { 

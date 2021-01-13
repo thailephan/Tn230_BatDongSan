@@ -1,141 +1,198 @@
 ﻿@model DbContextModel.Framework.ThongTinBDS
-
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h1>THÔNG TIN BẤT ĐỘNG SẢN</h1>
 <p></p>
 
-
 <div>
-    
-    
-    <table class="tableThongTin" ,>
+    <h2>
+        @Html.DisplayFor(model => model.TieuDe)
+    </h2>
+
+    <div class="slideshow-container d-flex flex-row overflow-auto">
+        @for (int i = 0; i < Model.Anhs.Count(); i++)
+        {
+            <div class="">
+                <img src="@Model.Anhs.ElementAt(i).DuongDan" class="impdat img-thumbnail" style="height:250px;" />
+            </div>
+        }
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        @for (int i = 0; i < Model.Anhs.Count(); i++)
+        {
+            <div class="mySlides">
+        <span class="dot" onclick="currentSlide(i + 1)"></span>
+            </div>
+        }
+    </div>
+
+    <table class="bangcon">
         <tr>
-            <h2>
-                @Html.DisplayFor(model => model.TieuDe)
-            </h2>
+            <th width="15%">
+                <p>
+                    @Html.DisplayNameFor(model => model.Gia)
+                </p>
+                <dd>
+                    @Html.DisplayFor(model => model.Gia)
+                </dd>
+            </th>
+
+            <th width="15%">
+                <p>
+                    @Html.DisplayNameFor(model => model.ChieuDai)
+                </p>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ChieuDai)
+                </dd>
+
+            </th>
+
+            <th width="15%">
+                <p>
+                    @Html.DisplayNameFor(model => model.ChieuRong)
+                </p>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ChieuRong)
+                </dd>
+            </th>
         </tr>
-
-        <tr>
-            <table class="bangcon">
-                <tr>
-                    <th width="15%">
-                        <p>
-                            @Html.DisplayNameFor(model => model.Gia)
-                        </p>
-                        <dd>
-                            @Html.DisplayFor(model => model.Gia)
-                        </dd>
-                    </th>
-
-                    <th width="15%">
-                        <p>
-                            @Html.DisplayNameFor(model => model.ChieuDai)
-                        </p>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.ChieuDai)
-                        </dd>
-
-                    </th>
-
-                    <th width="15%">
-                        <p>
-                            @Html.DisplayNameFor(model => model.ChieuRong)
-                        </p>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.ChieuRong)
-                        </dd>
-                    </th>
-                </tr>
-            </table>
-        </tr>
+    </table>
+    </tr>
+    <hr />
+    <tr>
+        <h4>Đặc điểm bất động sản</h4>
         <hr />
-        <tr>
-            <h4>Đặc điểm bất động sản</h4>
+        <table class="dacdiembds">
+            <tr>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LoaiBD.TenLoai)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LoaiBD.TenLoai)
+                </dd>
+            </tr>
+            <tr>
+                <dt>
+                    @Html.DisplayNameFor(model => model.KhuDanCu.TenKhuDanCu)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.KhuDanCu.TenKhuDanCu)
+                </dd>
+            </tr>
+            <tr>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Huong.TenHuong)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Huong.TenHuong)
+                </dd>
+            </tr>
+            <tr>
+                <dt>
+                    @Html.DisplayNameFor(model => model.QuanHuyen.TenQuanHuyen)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.QuanHuyen.TenQuanHuyen)
+                </dd>
+            </tr>
+            
+        </table>
+
+
+    </tr>
+    <tr>
+        <h4>Mô Tả</h4>
+        <hr />
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+    </tr>
+    <tr>
+        <h4>Thông tin liên lạc</h4>
+        <table class="thongtinlienlac">
             <hr />
-            <table class="dacdiembds">
-                <tr>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.LoaiBD.TenLoai)
-                    </dt>
+            <tr>
+                <th width="1%">
+                    <p>Người đăng tin</p>
                     <dd>
-                        @Html.DisplayFor(model => model.LoaiBD.TenLoai)
+                        @Html.DisplayFor(model => model.ThongTin.HoTen)
                     </dd>
-                </tr>
-                <tr>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.KhuDanCu.TenKhuDanCu)
-                    </dt>
+                </th>
+                <th width="15%">
+                    <p>
+                        @Html.DisplayNameFor(model => model.SDTChuBan)
+                    </p>
 
                     <dd>
-                        @Html.DisplayFor(model => model.KhuDanCu.TenKhuDanCu)
+                        @Html.DisplayFor(model => model.SDTChuBan)
                     </dd>
-                </tr>
-                <tr>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Huong.TenHuong)
-                    </dt>
+                </th>
+            </tr>
+        </table>
+    </tr>
+    <tr>
+        <p>Ngày đăng bài</p>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Huong.TenHuong)
-                    </dd>
-                </tr>
-                <tr>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.QuanHuyen.TenQuanHuyen)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.QuanHuyen.TenQuanHuyen)
-                    </dd>
-                </tr>
-            </table>
-
-        </tr>
-        <tr>
-            <h4>Mô Tả</h4>
-            <hr />
-            <dd>
-                @Html.DisplayFor(model => model.MoTa)
-            </dd>
-        </tr>
-        <tr>
-            <h4>Thông tin liên lạc</h4>
-            <table class="thongtinlienlac">
-                <hr />
-                <tr>
-                    <th width="1%">
-                        <p>Người đăng tin</p>
-                        <dd>
-                            @Html.DisplayFor(model => model.ThongTin.HoTen)
-                        </dd>
-                    </th>
-                    <th width="15%">
-                        <p>
-                            @Html.DisplayNameFor(model => model.SDTChuBan)
-                        </p>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.SDTChuBan)
-                        </dd>
-                    </th>
-                </tr>
-            </table>
-        </tr>
-        <tr>
-            <p>Ngày đăng bài</p>
-
-            <dd>
-                @Html.DisplayFor(model => model.NgayTao)
-            </dd>
-        </tr>
+        <dd>
+            @Html.DisplayFor(model => model.NgayTao)
+        </dd>
+    </tr>
 
 
 
     </table>
 </div>
+
+@section Scripts {
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+}
 

@@ -1,10 +1,16 @@
-﻿using DbContextModel.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using DbContextModel;
+using DbContextModel.Framework;
+using Microsoft.AspNet.Identity;
+using TN230_BatDongSan.Areas.Admin.Code.Constant;
 
 namespace TN230_BatDongSan.Controllers
 {
@@ -60,14 +66,15 @@ namespace TN230_BatDongSan.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult ViewSearch(string searchString, int MaHuong = -1, int MaKhuDanCu = -1, int MaLoai = -1, int MaQuanHuyen = -1, int GiaTien = -1, int dienTich = -1)
+        public ActionResult ViewSearch(string searchString, int MaHuong = -1, int MaKhuDanCu = -1, int MaLoai = -1, int MaQuanHuyen = -1, int GiaTien = -1)
         {
             ViewBag.ListHuong = new SelectList(db.Huongs, "MaHuong", "TenHuong");
             ViewBag.ListKhudancu = new SelectList(db.KhuDanCus, "MaKhuDanCu", "TenKhuDanCu");
             ViewBag.ListLoaiBDS = new SelectList(db.LoaiBDS, "MaLoai", "TenLoai");
             ViewBag.ListQuanHuyen = new SelectList(db.QuanHuyens, "MaQuanHuyen", "TenQuanHuyen");
-           
-            var dsbds = db.ThongTinBDS.ToList();
+
+            List<ThongTinBDS> dsbds = db.ThongTinBDS.Include(t => t.Anhs).ToList();
+
             if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
             {
                 dsbds = dsbds.FindAll(s => s.TieuDe.Contains(searchString)); //lọc theo chuỗi tìm kiếm
@@ -92,23 +99,6 @@ namespace TN230_BatDongSan.Controllers
                     dsbds = dsbds.FindAll(n => n.Gia >= 4000000000); break;
 
             }
-        switch (dienTich)
-        {
-            case 0:
-                dsbds = dsbds.FindAll(n => (n.ChieuDai * n.ChieuRong) < 30); break;
-            case 1:
-                dsbds = dsbds.FindAll(n => ((n.ChieuDai * n.ChieuRong) >= 30 && (n.ChieuDai * n.ChieuRong) < 50)); break;
-            case 2:
-                dsbds = dsbds.FindAll(n => ((n.ChieuDai * n.ChieuRong) >= 50 && (n.ChieuDai * n.ChieuRong) < 80)); break;
-            case 3:
-                dsbds = dsbds.FindAll(n => ((n.ChieuDai * n.ChieuRong) >= 80 && (n.ChieuDai * n.ChieuRong) < 120)); break;
-            case 4:
-                dsbds = dsbds.FindAll(n => ((n.ChieuDai * n.ChieuRong) >= 120 && (n.ChieuDai * n.ChieuRong) < 200)); break;
-            case 5:
-                dsbds = dsbds.FindAll(n => ((n.ChieuDai * n.ChieuRong) >= 200 && (n.ChieuDai * n.ChieuRong) < 300)); break;
-            case 6:
-                dsbds = dsbds.FindAll(n => (n.ChieuDai * n.ChieuRong) < 300); break;
-        }
             return View(dsbds);
         }
 
