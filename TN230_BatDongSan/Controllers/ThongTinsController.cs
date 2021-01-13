@@ -13,7 +13,7 @@ namespace TN230_BatDongSan.Controllers
         // GET: /ThongTins
         public ActionResult Index()
         {
-            var thongTins = db.ThongTins.Include(t => t.TaiKhoan);
+            var thongTins = db.ThongTinsBDS.Include(t => t.TaiKhoan);
             return View(thongTins.ToList());
         }
 
@@ -24,7 +24,7 @@ namespace TN230_BatDongSan.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ThongTin thongTin = db.ThongTins.Find(id);
+            ThongTin thongTin = db.ThongTinsBDS.Find(id);
             if (thongTin == null)
             {
                 return HttpNotFound();
