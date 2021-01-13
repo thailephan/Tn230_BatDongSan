@@ -18,7 +18,7 @@
         [Display(Name = "Mã tin")]
         public int MaTin { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Tiêu đề không được để trống")]
         [StringLength(300)]
         [Display(Name = "Tiêu đề")]
         public string TieuDe { get; set; }
@@ -37,7 +37,7 @@
         [Display(Name = "Mô tả")]
         public string MoTa { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Số điện thoại người bán không được để trống")]
         [StringLength(10)]
         [Display(Name = "SĐT chủ bán")]
         public string SDTChuBan { get; set; }

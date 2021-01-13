@@ -30,7 +30,7 @@
         public string DiaChi { get; set; }
 
         [Required(ErrorMessage = "Số điện thoại không được để trống")]
-        [StringLength(10)]
+        [StringLength(10, ErrorMessage = "Số điện thoại không quá 10 ký tự")]
         [Display(Name = "Số điện thoại"), DataType(DataType.PhoneNumber)]
         public string SDT { get; set; }
         
@@ -38,7 +38,7 @@
         [Range(1900, 9999, ErrorMessage = "Năm sinh phải lớn hơn 1900")]
         public int NamSinh { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Nhập giới tính của bạn")]
         [Display(Name = "Giới tính")]
         [StringLength(10)]
         public string GioiTinh { get; set; }

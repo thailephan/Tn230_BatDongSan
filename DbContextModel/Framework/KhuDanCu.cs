@@ -19,7 +19,7 @@
         [Display(Name = "Mã khu dân cư")]
         public int MaKhuDanCu { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Tên khu dân cư không được trống")]
         [Display(Name = "Tên khu dân cư")]
         [StringLength(2000)]
         public string TenKhuDanCu { get; set; }
