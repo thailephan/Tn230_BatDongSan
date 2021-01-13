@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -109,6 +110,22 @@ namespace TN230_BatDongSan.Controllers
                 dsbds = dsbds.FindAll(n => (n.ChieuDai * n.ChieuRong) < 300); break;
         }
             return View(dsbds);
+        }
+
+       
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            var viewModel = db.ThongTinBDS.SingleOrDefault(s => s.MaTin == id);
+            if (viewModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(viewModel);
         }
     }
 }

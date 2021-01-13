@@ -1,13 +1,14 @@
 ﻿@model DbContextModel.Framework.ThongTinBDS
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Thêm mới bất động sản";
 }
+@ViewBag.UserName
 
-@using (Html.BeginForm("Create", "ThongTinBDS", FormMethod.Post, new { @enctype = "multipart/form-data" })) 
+@using (Html.BeginForm("Create", "ThongTinBDS", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Thêm mới</h4>
         <hr />
@@ -69,14 +70,14 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.ThongTin.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("MaUser", null, "Chọn người dùng", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaUser, "", new { @class = "text-danger" })
             </div>
         </div>
-
+*@
         <div class="form-group">
             @Html.LabelFor(model => model.LoaiBD.TenLoai, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -118,7 +119,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Trở về trang quản lý bất động sản", "Index")
 </div>
 
 @section Scripts {
@@ -128,7 +129,7 @@
 
         $(".files").on("change", function () {
             console.log($(this)[0].files);
-            if ($(this)[0].files.length >= 1) {
+            if ($(this)[0].files.length >= 3) {
                 $("#btn-create").removeAttr("disabled")
             } else {
                 $("#btn-create").attr("disabled", true)

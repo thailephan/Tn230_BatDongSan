@@ -43,7 +43,7 @@
         public string SDTChuBan { get; set; }
 
         [Column(TypeName = "money")]
-        [Display(Name = "Giá")]
+        [Display(Name = "Giá (triệu đồng)")]
         public decimal Gia { get; set; }
         
         [Display(Name = "Mã hướng")]
