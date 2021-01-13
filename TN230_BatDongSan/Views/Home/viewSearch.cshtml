@@ -1,122 +1,130 @@
 ﻿@model IEnumerable<DbContextModel.Framework.ThongTinBDS>
 
 @{
-    ViewBag.Title = "viewSearch";
+    ViewBag.Title = "Thông tin Bất dộng sản";
 }
 
-@section scripts{
-    <script>
-        var mahuong = makhudancu = maloaibds = maquanhuyen = giatien = -1;
-        function showInfo() {
-            console.log(mahuong, makhudancu, maloaibds, maquanhuyen, giatien)
-            $.ajax({
-                url: "/Home/showInfo",
-                success: function (result) {
-                    $("#data").html(result);
-                },
-                data: {
-                    id_mahuong: mahuong,
-                    id_khudancu: makhudancu,
-                    id_maloaibds: maloaibds,
-                    id_maquanhuyen: maquanhuyen,
-                    id_giatien: giatien
+<div style=" background-color: white">
+    <div>
+        @section scripts{
+            <script>
+                var mahuong = makhudancu = maloaibds = maquanhuyen = giatien = -1;
+                function showInfo() {
+                    console.log(mahuong, makhudancu, maloaibds, maquanhuyen, giatien, dientich)
+                    $.ajax({
+                        url: "/Home/showInfo",
+                        success: function (result) {
+                            $("#data").html(result);
+                        },
+                        data: {
+                            id_mahuong: mahuong,
+                            id_khudancu: makhudancu,
+                            id_maloaibds: maloaibds,
+                            id_maquanhuyen: maquanhuyen,
+                            id_giatien: giatien,
+
+                        }
+
+                    });
                 }
 
-            });
+                function changeHuong(e) {
+                    if ($("#MaHuong").val() === "") {
+                        mahuong = -1;
+                    } else mahuong = $("#MaHuong").val()
+                }
+
+                function changeKhuDanCu(e) {
+                    if ($("#MaKhuDanCu").val() === "") {
+                        makhudancu = -1;
+                    } else makhudancu = $("#MaKhuDanCu").val()
+                }
+
+                function changeLoai(e) {
+                    if ($("#MaLoai").val() === "") {
+                        maloaibds = -1;
+                    } else maloaibds = $("#MaLoai").val()
+                }
+
+                function changeQuanHuyen(e) {
+                    if ($("#MaQuanHuyen").val() === "") {
+                        maquanhuyen = -1;
+                    } else maquanhuyen = $("#MaQuanHuyen").val()
+                }
+
+                function changeGia(e) {
+                    if ($("#GiaTien").val() === "") {
+                        giatien = -1;
+                    }
+                    else giatien = $("#GiaTien").val()
+                }
+
+            </script>
         }
 
-        function changeHuong(e) {
-            if ($("#MaHuong").val() === "") {
-                mahuong = -1;
-            } else mahuong = $("#MaHuong").val()
-        }
+        <div class="form-group">
+            @using (Html.BeginForm("viewSearch", "Home"))
+            {
+                <tr>
+                    <th scope="col">
+                        @Html.DropDownList("MaHuong", (SelectList)ViewBag.ListHuong, "Hướng", htmlAttributes: new { @class = "", @onchange = "changeHuong(this);" })
+                    </th>
+                    <th scope="col">
+                        @Html.DropDownList("MaKhuDanCu", (SelectList)ViewBag.ListKhuDanCu, "Khu dân cư", htmlAttributes: new { @class = "", @onchange = "changeKhuDanCu(this);" })
+                    </th>
+                    <th scope="col">
+                        @Html.DropDownList("MaLoai", (SelectList)ViewBag.ListLoaiBDS, "Loại", htmlAttributes: new { @class = "", @onchange = "changeLoai(this);" })
+                    </th>
+                    <th scope="col">
+                        @Html.DropDownList("MaQuanHuyen", (SelectList)ViewBag.ListQuanHuyen, "Quận/Huyện", htmlAttributes: new { @class = "", @onchange = "changeQuanHuyen(this);" })
+                    </th>
+                    <th scope="col">
+                        <select class="" id="GiaTien" name="GiaTien" onchange="changeGia(this);"> 
+                            <option value="">Giá</option>
+                            <option value="0">Dưới 500 triệu</option>
+                            <option value="1">500 triệu - 1 tỷ</option>
+                            <option value="2">1 tỷ - 2 tỷ</option>
+                            <option value="3">2 tỷ - 3 tỷ</option>
+                            <option value="4">3 tỷ - 4 tỷ</option>
+                            <option value="5">Trên 4 tỷ</option>
+                        </select>
+                    </th>
+                    <th scope="col">
+                        <input type="text" actions="viewSearch" placeholder="Tìm kiếm bất động sản" name="searchString" value="" class="search-bar-input ui-autocomplete-input" id="search-suggestion" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                    </th>
+                    <th scope="col">
+                        <input type="submit" id="btnSearch" class="btn-blue-7" value="Tìm kiếm">
+                    </th>
 
-        function changeKhuDanCu(e) {
-            if ($("#MaKhuDanCu").val() === "") {
-                makhudancu = -1;
-            } else makhudancu = $("#MaKhuDanCu").val()
-        }
-
-        function changeLoai(e) {
-            if ($("#MaLoai").val() === "") {
-                maloaibds = -1;
-            } else maloaibds = $("#MaLoai").val()
-        }
-
-        function changeQuanHuyen(e) {
-            if ($("#MaQuanHuyen").val() === "") {
-                maquanhuyen = -1;
-            } else maquanhuyen = $("#MaQuanHuyen").val()
-        }
-
-        function changeGia(e) {
-            if ($("#GiaTien").val() === "") {
-                giatien = -1;
+                </tr>
             }
-            else giatien = $("#GiaTien").val()
-        }
-
-
-    </script>
-}
-
-<div class="form-group">
-    @using (Html.BeginForm("viewSearch", "Home"))
-    {
-         <tr>
-             <th scope="col">
-                 @Html.DropDownList("MaHuong", (SelectList)ViewBag.ListHuong, "Hiển thị hướng", htmlAttributes: new { @class = "", @onchange = "changeHuong(this);" })
-             </th>
-             <th scope="col">
-                 @Html.DropDownList("MaKhuDanCu", (SelectList)ViewBag.ListKhuDanCu, "Hiển thị khu dân cư", htmlAttributes: new { @class = "", @onchange = "changeKhuDanCu(this);" })
-             </th>
-             <th scope="col">
-                 @Html.DropDownList("MaLoai", (SelectList)ViewBag.ListLoaiBDS, "Hiển thị loại", htmlAttributes: new { @class = "", @onchange = "changeLoai(this);" })
-             </th>
-             <th scope="col">
-                 @Html.DropDownList("MaQuanHuyen", (SelectList)ViewBag.ListQuanHuyen, "Hiển thị quận huyện", htmlAttributes: new { @class = "", @onchange = "changeQuanHuyen(this);" })
-             </th>
-             <th scope="col">
-                 <select class="" id="GiaTien" name="GiaTien" onchange="changeGia(this);">
-                     <option value="">Hiển thị giá</option>
-                     <option value="0">Dưới 500 triệu</option>
-                     <option value="1">500 triệu - 1 tỷ</option>
-                     <option value="2">1 tỷ - 2 tỷ</option>
-                     <option value="3">2 tỷ - 3 tỷ</option>
-                     <option value="4">3 tỷ - 4 tỷ</option>
-                     <option value="5">Trên 4 tỷ</option>
-                 </select>
-             </th>
-             <th scope="col">
-                 <input type="text" actions="viewSearch" placeholder="Tìm kiếm theo tiêu đề" name="searchString" value="" class="search-bar-input ui-autocomplete-input" id="search-suggestion" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
-             </th>
-             <th scope="col">
-                 <input type="submit" id="btnSearch" class="btn-blue-7" value="Tìm kiếm">
-             </th>
-         </tr>
-    }
-</div>
-
-
-<div id="data">
-</div>
-
-<div class="" id="" style="display:block">
-    @foreach (var item in Model)
-    {
-        <div class="m-3 d-flex flex-row">
-            <div>
-                <img style="width:200px; " alt="Chính chủ cần bán gấp nhà 4 tầng tại Nam Từ Liêm, diện tích 47m2, giá 4,85 tỷ" src="https://file4.batdongsan.com.vn/crop/350x232/2020/12/10/YOQqf9mk/20201210115130-bdc6_wm.jpg">
-            </div>
-            <div class="d-flex flex-column justify-content-center align-items-start m-lg-2">
-                Tiêu đề: @Html.DisplayFor(modelItem => item.TieuDe) <br />
-                Diện tích:  @Html.DisplayFor(modelItem => item.ChieuDai) x
-                @Html.DisplayFor(modelItem => item.ChieuRong) (chiều dài x chiều rộng) <br />
-                SĐT người bán: @Html.DisplayFor(modelItem => item.SDTChuBan) <br />
-                Giá bán: @Html.DisplayFor(modelItem => item.Gia) <br />
-                Mô tả: @Html.Raw(@Html.DisplayFor(modelItem => item.MoTa))
-            </div>
         </div>
 
-    }
+
+        <div id="data">
+        </div>
+    </div>
+
+   
+
+    <div class="d-flex flex-wrap flex-row" id="" style="display:block">
+        @foreach (var item in Model)
+        {
+            <div class="" style=" background-color: white">
+                <div class="m-3" style="        background-color: #edf2fb">
+                    <div>
+                        <img style="width:200px; " alt="Chính chủ cần bán gấp nhà 4 tầng tại Nam Từ Liêm, diện tích 47m2, giá 4,85 tỷ" src="https://file4.batdongsan.com.vn/crop/350x232/2020/12/10/YOQqf9mk/20201210115130-bdc6_wm.jpg">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-start m-lg-2">
+                        <p style="color: #006d77; font-size:20px">@Html.DisplayFor(modelItem => item.TieuDe)</p>
+                        Diện tích:@Html.DisplayFor(modelItem => item.ChieuDai) x
+                        @Html.DisplayFor(modelItem => item.ChieuRong)<br />
+                        Giá bán @Html.DisplayFor(modelItem => item.Gia) <br />
+
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
 </div>
